@@ -120,8 +120,83 @@ nav {
 .nav-logo { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 1.4rem; letter-spacing: 0.04em; text-decoration: none; }
 .nav-logo span { color: var(--gold); }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+.nav-links li { position: relative; }
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 24px 0 22px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: opacity 0.2s, transform 0.2s;
+}
 .nav-links a:hover { color: var(--gold); }
+.nav-links a.is-active {
+  color: #fff;
+}
+.nav-links a.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 50%;
+  min-width: 168px;
+  padding: 6px;
+  background: rgba(7,17,31,0.98);
+  border: 1px solid rgba(201,146,26,0.18);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.nav-dropdown a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.72);
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+.nav-dropdown a::after {
+  display: none;
+}
+.nav-dropdown a::before {
+  content: 'Library';
+  color: rgba(255,255,255,0.9);
+}
+.nav-dropdown a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--gold);
+}
+.nav-has-dropdown:hover .nav-dropdown,
+.nav-has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
 .nav-cta { padding: 9px 24px; background: var(--gold); color: #fff; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: background 0.2s; }
 .nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
 
@@ -183,9 +258,20 @@ nav {
 .broken-header p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; }
 .broken-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
 .broken-card { background: #0d1f3a; padding: 36px 28px; }
-.broken-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.broken-card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
 .broken-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); font-weight: 700; line-height: 0.9; flex-shrink: 0; }
-.broken-card h3 { color: #fff; font-size: 1rem; font-weight: 600; margin: 6px 0 0; letter-spacing: 0.02em; flex: 1; text-align: center; transform: translateX(-8px); }
+.broken-card h3 {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 8px 0 0;
+  letter-spacing: 0;
+  flex: 1;
+  text-align: center;
+  transform: translateX(-18px);
+}
 .broken-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.7; }
 
 /* MENTOR */
@@ -497,7 +583,12 @@ footer { background: #050c17; padding: 56px; }
   <ul class="nav-links" role="list">
     <li><a href="#arc">The Arc</a></li>
     <li><a href="#frameworks">How We Work</a></li>
-    <li><a href="#work">Our Work</a></li>
+    <li class="nav-has-dropdown">
+      <a href="#work">Our Work</a>
+      <div class="nav-dropdown">
+        <a href="../assets/documents/resources.html"></a>
+      </div>
+    </li>
     <li><a href="#voices">Voices</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#contact">Work With Us</a></li>
@@ -536,7 +627,7 @@ footer { background: #050c17; padding: 56px; }
         <div class="hero-stat-label">Years of field-tested research behind every engagement</div>
       </div>
       <div class="hero-stat-block">
-        <div class="hero-stat-num">2x</div>
+        <div class="hero-stat-num">Higher</div>
         <div class="hero-stat-label">Student growth in mentor-apprentice teaching dyads versus solo classrooms, consistently, across every comparison</div>
       </div>
     </div>
@@ -1361,6 +1452,44 @@ document.querySelectorAll('.modal-overlay').forEach(function(el) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     track.style.animation = 'none';
   }
+})();
+
+// Active section indicator
+(function() {
+  var navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var sectionMap = navLinks
+    .map(function(link) {
+      var target = document.querySelector(link.getAttribute('href'));
+      return target ? { link: link, section: target } : null;
+    })
+    .filter(Boolean);
+
+  if (!sectionMap.length) return;
+
+  function setActive(id) {
+    navLinks.forEach(function(link) {
+      link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+    });
+  }
+
+  function updateActiveSection() {
+    var viewportMid = window.scrollY + (window.innerHeight * 0.52);
+    var currentId = '';
+
+    sectionMap.forEach(function(item) {
+      var sectionTop = item.section.offsetTop;
+      var sectionBottom = sectionTop + item.section.offsetHeight;
+      if (sectionTop <= viewportMid && sectionBottom >= viewportMid) {
+        currentId = item.section.id;
+      }
+    });
+
+    setActive(currentId);
+  }
+
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection);
+  updateActiveSection();
 })();
 </script></body>
 </html>

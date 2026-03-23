@@ -26,30 +26,130 @@ a { color: inherit; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   padding: 0 56px; height: 68px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center;
   background: rgba(7,17,31,0.92); backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201,146,26,0.18);
 }
 .nav-logo { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 1.4rem; letter-spacing: 0.04em; text-decoration: none; }
 .nav-logo span { color: var(--gold); }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links li { position: relative; }
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 24px 0 22px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: opacity 0.2s, transform 0.2s;
+}
 .nav-links a:hover { color: var(--gold); }
+.nav-links a.is-active { color: #fff; }
+.nav-links a.is-active::after { opacity: 1; transform: scaleX(1); }
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 50%;
+  min-width: 168px;
+  padding: 6px;
+  background: rgba(7,17,31,0.98);
+  border: 1px solid rgba(201,146,26,0.18);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.nav-dropdown a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.72);
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+.nav-dropdown a::after { display: none; }
+.nav-dropdown a::before {
+  content: 'Library';
+  color: rgba(255,255,255,0.9);
+}
+.nav-dropdown a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--gold);
+}
+.nav-has-dropdown:hover .nav-dropdown,
+.nav-has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
 .nav-cta { padding: 9px 24px; background: var(--gold); color: #fff; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: background 0.2s; }
 .nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
+.doc-header {
+  position: sticky;
+  top: 68px;
+  z-index: 950;
+  margin-top: 68px;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, #161b22 0%, #20262f 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.doc-header-inner {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
 .hero {
   background: linear-gradient(180deg, var(--navy) 0%, #142744 100%);
   color: #fff;
-  padding: 156px 28px 72px;
+  padding: 120px 28px 72px;
 }
 .hero-inner, .section-inner { max-width: 1200px; margin: 0 auto; }
-.hero-eyebrow {
+.doc-breadcrumb {
+  margin: 0;
+  color: rgba(255,255,255,0.68);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+.doc-breadcrumb a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+.doc-breadcrumb a:hover {
   color: var(--gold);
-  font-size: 0.76rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 18px;
 }
 .hero h1 {
   font-family: 'Playfair Display', Georgia, serif;
@@ -189,6 +289,7 @@ footer { background: #050c17; padding: 56px 28px; }
 @media (max-width: 980px) {
   nav { padding: 0 24px; }
   .nav-links { display: none; }
+  .doc-header { margin-top: 68px; padding: 8px 16px; }
   .section-header { flex-direction: column; align-items: start; }
   .resource-grid, .work-grid { grid-template-columns: 1fr; }
   .modal-body { padding: 32px 24px 40px; }
@@ -204,20 +305,31 @@ footer { background: #050c17; padding: 56px 28px; }
     <ul class="nav-links" role="list">
       <li><a href="../../updates01/index.html#arc">The Arc</a></li>
       <li><a href="../../updates01/index.html#frameworks">How We Work</a></li>
-      <li><a href="../../updates01/index.html#work">Our Work</a></li>
+      <li class="nav-has-dropdown">
+        <a href="../../updates01/index.html#work" class="is-active">Our Work</a>
+        <div class="nav-dropdown">
+          <a href="resources.html"></a>
+        </div>
+      </li>
       <li><a href="../../updates01/index.html#voices">Voices</a></li>
       <li><a href="../../updates01/index.html#team">Team</a></li>
       <li><a href="../../updates01/index.html#contact">Work With Us</a></li>
     </ul>
-    <a href="../../updates01/index.html#contact" class="nav-cta">Schedule a Conversation</a>
+    <div class="nav-right">
+      <a href="../../updates01/index.html#contact" class="nav-cta">Schedule a Conversation</a>
+    </div>
   </nav>
+  <div class="doc-header">
+    <div class="doc-header-inner">
+      <p class="doc-breadcrumb"><a href="../../updates01/index.html#work">Our Work</a> &gt; Library</p>
+    </div>
+  </div>
 
   <main id="main-content">
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Resources & Case Studies</div>
       <h1>One place for the work,<br>the thinking, and the proof.</h1>
-      <p>This library brings together Education Accelerated whitepapers, playbooks, case studies, and featured engagements in one place. As the site grows, this page can carry the archive while the homepage stays curated and focused.</p>
+      <p>Explore case studies, whitepapers, playbooks, and examples of the work that can help you clarify your next move.</p>
     </div>
   </section>
 
@@ -228,7 +340,6 @@ footer { background: #050c17; padding: 56px 28px; }
           <div class="section-label">Documents</div>
           <h2>Whitepapers, playbooks,<br>and featured resources.</h2>
         </div>
-        <p>These are the pieces visitors can read in-browser without downloading first, while still keeping the original PDFs available when needed.</p>
       </div>
       <div class="resource-grid">
         <article class="resource-card">
@@ -263,7 +374,6 @@ footer { background: #050c17; padding: 56px 28px; }
           <div class="section-label">Featured Work</div>
           <h2>The places where heroes<br>are being made.</h2>
         </div>
-        <p>These featured case studies now behave the same way as the main site: quick cards here on the page, with deeper details opening in-place.</p>
       </div>
       <div class="work-grid">
         <div class="work-card" id="case-aps">
