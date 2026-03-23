@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,13 +12,13 @@
 <meta name="keywords" content="education transformation, educator development, teacher residency, Arc of an Educator, FUSION process, KeySTONE, education consulting, educator ecosystems, teacher pipeline, education accelerated">
 <link rel="canonical" href="https://www.educationaccelerated.com/">
 
-<!-- Open Graph - optimized for LinkedIn sharing -->
+<!-- Open Graph — optimized for LinkedIn sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Education Accelerated">
 <meta property="og:title" content="Education Accelerated | Thriving Educators. Thriving Learners.">
 <meta property="og:description" content="Education Accelerated builds educator ecosystems that grow teachers, retain talent, and put every student on a personal pathway to success. Operating across 26 countries.">
 <meta property="og:url" content="https://www.educationaccelerated.com/">
-<meta property="og:image" content="https://www.educationaccelerated.com/images/graded-hero-bg.jpg">
+<meta property="og:image" content="images/graded-hero-bg.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Education Accelerated: building educator ecosystems across 26 countries">
@@ -29,7 +29,7 @@
 <meta name="twitter:site" content="@EducationAccelerated">
 <meta name="twitter:title" content="Education Accelerated | Thriving Educators. Thriving Learners.">
 <meta name="twitter:description" content="Education Accelerated builds educator ecosystems that grow teachers, retain talent, and put every student on a personal pathway to success. Operating across 26 countries.">
-<meta name="twitter:image" content="https://www.educationaccelerated.com/images/graded-hero-bg.jpg">
+<meta name="twitter:image" content="images/graded-hero-bg.jpg">
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-78MG09HSH4"></script>
@@ -48,7 +48,7 @@
   "name": "Education Accelerated",
   "alternateName": "EA",
   "url": "https://www.educationaccelerated.com",
-  "logo": "https://www.educationaccelerated.com/images/graded-hero-bg.jpg",
+  "logo": "images/graded-hero-bg.jpg",
   "description": "Education Accelerated is a boutique education transformation consultancy operating across 26 countries. We build the systems, frameworks, and ecosystems that allow educators to grow across a full career, from first exploration through system leadership.",
   "slogan": "Factories make widgets. Ecosystems grow people.",
   "foundingDate": "2020",
@@ -117,92 +117,17 @@ nav {
   background: rgba(7,17,31,0.92); backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201,146,26,0.18);
 }
-.nav-logo { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 1.4rem; letter-spacing: 0.04em; text-decoration: none; }
+.nav-logo { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 1rem; letter-spacing: 0.04em; text-decoration: none; }
 .nav-logo span { color: var(--gold); }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links li { position: relative; }
-.nav-links a {
-  position: relative;
-  display: inline-block;
-  padding: 24px 0 22px;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 8px;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0;
-  transform: scaleX(0.35);
-  transform-origin: center;
-  transition: opacity 0.2s, transform 0.2s;
-}
+.nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--gold); }
-.nav-links a.is-active {
-  color: #fff;
-}
-.nav-links a.is-active::after {
-  opacity: 1;
-  transform: scaleX(1);
-}
-.nav-dropdown {
-  position: absolute;
-  top: calc(100% - 6px);
-  left: 50%;
-  min-width: 168px;
-  padding: 6px;
-  background: rgba(7,17,31,0.98);
-  border: 1px solid rgba(201,146,26,0.18);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
-  transform: translateX(-50%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-.nav-dropdown a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 9px 10px;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.72);
-  border-left: 2px solid transparent;
-  text-decoration: none;
-}
-.nav-dropdown a::after {
-  display: none;
-}
-.nav-dropdown a::before {
-  content: 'Library';
-  color: rgba(255,255,255,0.9);
-}
-.nav-dropdown a:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.04);
-  border-left-color: var(--gold);
-}
-.nav-has-dropdown:hover .nav-dropdown,
-.nav-has-dropdown:focus-within .nav-dropdown {
-  opacity: 1;
-  pointer-events: auto;
-}
 .nav-cta { padding: 9px 24px; background: var(--gold); color: #fff; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: background 0.2s; }
 .nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
 
 /* HERO */
 .hero { min-height: 100vh; display: flex; align-items: center; background: #162c4a; position: relative; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background-image: url('../assets/images/graded-hero-bg.jpg'); background-size: cover; background-position: center 25%; opacity: 0.32; filter: grayscale(20%); }
+.hero-bg { position: absolute; inset: 0; background-image: url('images/graded-hero-bg.jpg'); background-size: cover; background-position: center 25%; opacity: 0.32; filter: grayscale(20%); }
 .hero-glow { position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%); width: 900px; height: 600px; background: radial-gradient(ellipse, rgba(201,146,26,0.12) 0%, transparent 70%); pointer-events: none; }
 .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 140px 56px 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--gold); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin-bottom: 28px; }
@@ -258,20 +183,8 @@ nav {
 .broken-header p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; }
 .broken-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
 .broken-card { background: #0d1f3a; padding: 36px 28px; }
-.broken-card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
-.broken-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); font-weight: 700; line-height: 0.9; flex-shrink: 0; }
-.broken-card h3 {
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.28rem;
-  font-weight: 700;
-  line-height: 1.15;
-  margin: 8px 0 0;
-  letter-spacing: 0;
-  flex: 1;
-  text-align: center;
-  transform: translateX(-18px);
-}
+.broken-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 20px; }
+.broken-card h3 { color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.02em; }
 .broken-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.7; }
 
 /* MENTOR */
@@ -291,7 +204,7 @@ nav {
 .arc-header .eyebrow { color: var(--teal); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
 .arc-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
 .arc-header p { color: var(--text-light); font-size: 1rem; line-height: 1.8; }
-.arc-diagram { max-width: 1320px; margin: 0 auto 72px; }
+.arc-diagram { max-width: 1100px; margin: 0 auto 72px; }
 .arc-cards-label { text-align: center; margin-bottom: 32px; }
 .arc-cards-label span { display: inline-block; color: var(--text-light); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; border-top: 1px solid #ddd; padding-top: 12px; }
 
@@ -321,7 +234,7 @@ nav {
 .arc-phase-header-num { margin-left: auto; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
 .arc-phase-rule { flex: 1; height: 1px; opacity: 0.15; }
 
-/* Phase 1 - teal */
+/* Phase 1 — teal */
 .arc-phase--entry .arc-phase-header { background: rgba(13,124,143,0.08); border-left: 3px solid var(--arc-teal); }
 .arc-phase--entry .arc-phase-header-dot { background: var(--arc-teal); }
 .arc-phase--entry .arc-phase-header-label { color: var(--arc-teal); }
@@ -332,7 +245,7 @@ nav {
 .arc-phase--entry .arc-card-tag { background: rgba(13,124,143,0.12); color: var(--arc-teal); }
 .arc-phase--entry .arc-card:hover .arc-card-tag { background: rgba(13,124,143,0.22); color: var(--arc-teal); }
 
-/* Phase 2 - green */
+/* Phase 2 — green */
 .arc-phase--excel .arc-phase-header { background: rgba(42,157,110,0.08); border-left: 3px solid var(--arc-green); }
 .arc-phase--excel .arc-phase-header-dot { background: var(--arc-green); }
 .arc-phase--excel .arc-phase-header-label { color: var(--arc-green); }
@@ -343,7 +256,7 @@ nav {
 .arc-phase--excel .arc-card-tag { background: rgba(42,157,110,0.12); color: var(--arc-green); }
 .arc-phase--excel .arc-card:hover .arc-card-tag { background: rgba(42,157,110,0.22); color: var(--arc-green); }
 
-/* Phase 3 - gold */
+/* Phase 3 — gold */
 .arc-phase--lead .arc-phase-header { background: rgba(201,146,26,0.08); border-left: 3px solid var(--arc-gold); }
 .arc-phase--lead .arc-phase-header-dot { background: var(--arc-gold); }
 .arc-phase--lead .arc-phase-header-label { color: var(--arc-gold); }
@@ -445,62 +358,15 @@ nav {
 .cta-inner .eyebrow { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px; display: block; }
 .cta-inner h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); color: #fff; line-height: 1.15; margin-bottom: 20px; font-weight: 900; }
 .cta-inner p { color: rgba(255,255,255,0.55); font-size: 1.05rem; line-height: 1.8; margin-bottom: 48px; }
-.cta-form { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
-.form-section-label {
-  color: #fff;
-  font-size: 0.82rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: left;
-  margin: 0 0 14px;
-  display: block;
-}
-.form-section {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-.contact-interest-block { margin-top: 24px; padding-top: 0; }
-.contact-message-block { margin-top: 24px; }
-.cta-form input, .cta-form textarea {
+.cta-form { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.cta-form input, .cta-form textarea, .cta-form select {
   width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
   color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s;
 }
 .cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(255,255,255,0.3); }
-.cta-form input:focus, .cta-form textarea:focus { border-color: var(--gold); }
-.contact-interest-group { display: grid; grid-template-columns: 1fr; gap: 10px; text-align: left; }
-.contact-interest-option { position: relative; }
-.contact-interest-option input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-.contact-interest-card {
-  display: block;
-  min-height: 100%;
-  padding: 15px 18px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.78);
-  font-size: 0.84rem;
-  line-height: 1.45;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s;
-}
-.contact-interest-card:hover {
-  border-color: rgba(201,146,26,0.45);
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-}
-.contact-interest-option input:checked + .contact-interest-card {
-  border-color: var(--gold);
-  background: rgba(201,146,26,0.16);
-  color: #fff;
-}
-.contact-interest-option input:focus-visible + .contact-interest-card {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 2px rgba(201,146,26,0.2);
-}
+.cta-form input:focus, .cta-form textarea:focus, .cta-form select:focus { border-color: var(--gold); }
+.cta-form select { color: rgba(255,255,255,0.5); appearance: none; cursor: pointer; }
+.cta-form select option { background: var(--navy); color: #fff; }
 .cta-form textarea { height: 110px; resize: vertical; }
 .cta-form button { padding: 16px; background: var(--gold); color: #fff; border: none; cursor: pointer; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; transition: background 0.2s; font-family: 'Inter', sans-serif; }
 .cta-form button:hover { background: var(--gold-light); color: var(--navy-deep); }
@@ -569,7 +435,6 @@ footer { background: #050c17; padding: 56px; }
   .footer-links { justify-content: center; flex-wrap: wrap; }
   .mentor-stats { gap: 28px; }
   .modal-body { padding: 32px 24px 40px; }
-  .cta-form { max-width: 100%; }
 }
 </style>
 </head>
@@ -583,12 +448,7 @@ footer { background: #050c17; padding: 56px; }
   <ul class="nav-links" role="list">
     <li><a href="#arc">The Arc</a></li>
     <li><a href="#frameworks">How We Work</a></li>
-    <li class="nav-has-dropdown">
-      <a href="#work">Our Work</a>
-      <div class="nav-dropdown">
-        <a href="../assets/documents/resources.html"></a>
-      </div>
-    </li>
+    <li><a href="#work">Our Work</a></li>
     <li><a href="#voices">Voices</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#contact">Work With Us</a></li>
@@ -624,11 +484,11 @@ footer { background: #050c17; padding: 56px; }
       </div>
       <div class="hero-stat-block">
         <div class="hero-stat-num">40+</div>
-        <div class="hero-stat-label">Years of field-tested research behind every engagement</div>
+        <div class="hero-stat-label">Years of field-tested experience behind every engagement</div>
       </div>
       <div class="hero-stat-block">
         <div class="hero-stat-num">Higher</div>
-        <div class="hero-stat-label">Student growth in mentor-apprentice teaching dyads versus solo classrooms, consistently, across every comparison</div>
+        <div class="hero-stat-label">Student growth in collaborative team teaching environments versus solo classrooms</div>
       </div>
     </div>
   </div>
@@ -663,7 +523,7 @@ footer { background: #050c17; padding: 56px; }
     <div class="proof-items">
       <div class="proof-item"><div class="proof-item-num">26+</div><div class="proof-item-label">Countries</div></div>
       <div class="proof-divider" aria-hidden="true"></div>
-      <div class="proof-item"><div class="proof-item-num">40+</div><div class="proof-item-label">Years of Research</div></div>
+      <div class="proof-item"><div class="proof-item-num">40+</div><div class="proof-item-label">Years of Experience</div></div>
       <div class="proof-divider" aria-hidden="true"></div>
       <div class="proof-item"><div class="proof-item-num">9</div><div class="proof-item-label">Educator Lifecycle Stages</div></div>
       <div class="proof-divider" aria-hidden="true"></div>
@@ -685,7 +545,7 @@ footer { background: #050c17; padding: 56px; }
       <strong>They see their students differently. That's the connection we build for.</strong>"
     </div>
     <p class="belief-body" style="margin-top:0; font-family:'Playfair Display',serif; font-style:italic; font-size:1.25rem; color:var(--navy); line-height:1.6;">"America is not facing an educator shortage.<br>It is facing an educator ecosystem failure."</p>
-    <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); text-align:center; margin-top:-32px; margin-bottom:48px;">David B. Palumbo &nbsp;&amp;&nbsp; Adam Rubin &nbsp;&middot;&nbsp; Education Accelerated &amp; 2Revolutions</p>
+    <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); text-align:center; margin-top:-32px; margin-bottom:48px;">David B. Palumbo &nbsp;&amp;&nbsp; Adam Rubin &nbsp;·&nbsp; Education Accelerated &amp; 2Revolutions</p>
   </div>
 </section>
 
@@ -699,24 +559,18 @@ footer { background: #050c17; padding: 56px; }
     </div>
     <div class="broken-grid">
       <div class="broken-card">
-        <div class="broken-card-head">
-          <div class="broken-num">1.</div>
-          <h3>No Pipeline</h3>
-        </div>
+        <div class="broken-num">01</div>
+        <h3>No Pipeline</h3>
         <p>Schools wait for certified teachers instead of growing their own. The heroes are out there, in high schools, in communities, and the system ignores them. Every unfilled classroom is a learner without a guide.</p>
       </div>
       <div class="broken-card">
-        <div class="broken-card-head">
-          <div class="broken-num">2.</div>
-          <h3>Sink or Swim Induction</h3>
-        </div>
+        <div class="broken-num">02</div>
+        <h3>Sink or Swim Induction</h3>
         <p>New educators are handed a classroom and left to figure it out. The most formative years of a teaching career are also the most unsupported, and students in those classrooms absorb every cost of that isolation.</p>
       </div>
       <div class="broken-card">
-        <div class="broken-card-head">
-          <div class="broken-num">3.</div>
-          <h3>No Path Forward</h3>
-        </div>
+        <div class="broken-num">03</div>
+        <h3>No Path Forward</h3>
         <p>Veterans plateau. There is no structural investment in the educator who has been teaching for fifteen years and still has fifteen more to give. When great teachers stop growing, their students stop getting the best of them.</p>
       </div>
     </div>
@@ -734,7 +588,7 @@ footer { background: #050c17; padding: 56px; }
       <div class="mentor-stat"><div class="mentor-stat-num">9</div><div class="mentor-stat-label">Lifecycle Stages</div></div>
       <div class="mentor-stat"><div class="mentor-stat-num">26+</div><div class="mentor-stat-label">Countries</div></div>
       <div class="mentor-stat"><div class="mentor-stat-num">5</div><div class="mentor-stat-label">Core Frameworks</div></div>
-      <div class="mentor-stat"><div class="mentor-stat-num">40+</div><div class="mentor-stat-label">Years of Research</div></div>
+      <div class="mentor-stat"><div class="mentor-stat-num">40+</div><div class="mentor-stat-label">Years of Experience</div></div>
     </div>
   </div>
 </section>
@@ -743,9 +597,9 @@ footer { background: #050c17; padding: 56px; }
 <section class="arc-section" id="arc">
   <div class="arc-inner">
     <div class="arc-header">
-      <div class="eyebrow">EA's Signature Framework</div>
-      <h2>Every educator's journey<br>has nine chapters.</h2>
-      <p>Most systems invest in two or three of them and call it a pipeline. We build all nine, because the hero's journey does not end at certification. It deepens across a forty-year career.</p>
+      <div class="eyebrow">Education Accelerated's Signature Framework</div>
+      <h2>Every educator's career<br>moves through stages.</h2>
+      <p>The Arc maps nine of them across three phases, two that every educator travels, and a third for those who choose to lead beyond their classroom. Most systems invest in two or three stages and call it a pipeline. We build all nine.</p>
     </div>
 
     <!-- SVG Diagram -->
@@ -770,55 +624,54 @@ footer { background: #050c17; padding: 56px; }
         <text x="50" y="214" font-family="Georgia,serif" font-size="12.5" fill="#F8F5F0" opacity="0.9">College student</text>
         <circle cx="36" cy="298" r="5" fill="#0D7C8F"/>
         <text x="50" y="302" font-family="Georgia,serif" font-size="12.5" fill="#F8F5F0" opacity="0.9">Career changer</text>
-        <path d="M 162 118 L 172 118" fill="none" stroke="#0D7C8F" stroke-width="2" opacity="0.9"/>
-        <rect x="172" y="99" width="112" height="42" rx="4" fill="#071e2e" stroke="#0D7C8F" stroke-width="1.6"/>
-        <text x="228" y="117" font-family="Georgia,serif" font-size="13" fill="#0D7C8F" text-anchor="middle" font-weight="bold">Apprentice</text>
-        <text x="228" y="133" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" text-anchor="middle" opacity="0.85">4,500+ hours</text>
-        <path d="M 284 120 Q 312 146 332 178" fill="none" stroke="#0D7C8F" stroke-width="2" opacity="0.9"/>
-        <path d="M 136 210 L 172 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
-        <rect x="168" y="189" width="128" height="42" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="232" y="206" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Resident</text>
-        <text x="232" y="222" font-family="Georgia,serif" font-size="10.5" fill="#2a9d6e" text-anchor="middle" opacity="0.85">1,200-2,000 hours</text>
-        <path d="M 296 210 L 312 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
-        <path d="M 136 298 Q 232 306 332 244" fill="none" stroke="#0D7C8F" stroke-width="1.8" opacity="0.8"/>
-        <text x="286" y="296" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" opacity="0.92" text-anchor="middle">University Degree</text>
-        <text x="350" y="262" font-family="Georgia,serif" font-size="13.5" fill="#F8F5F0" text-anchor="middle" font-weight="bold">The Classroom</text>
-        <path d="M 386 210 L 402 210" fill="none" stroke="#2a9d6e" stroke-width="2" opacity="0.9"/>
-        <rect x="402" y="188" width="84" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="444" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">New</text>
-        <text x="444" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
-        <path d="M 486 210 L 502 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
-        <rect x="502" y="188" width="96" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="550" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Developing</text>
-        <text x="550" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
-        <path d="M 598 210 L 614 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
-        <rect x="610" y="188" width="100" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="660" y="207" font-family="Georgia,serif" font-size="12" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Accomplished</text>
-        <text x="660" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
-        <path d="M 710 210 L 718 210" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
-        <circle cx="740" cy="210" r="22" fill="#0F2240" stroke="#C9921A" stroke-width="2.5"/>
-        <circle cx="740" cy="210" r="7" fill="#C9921A" opacity="1"/>
-        <text x="740" y="247" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Mentor Teacher</text>
-        <path d="M 756 192 Q 806 138 846 122" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
-        <rect x="846" y="99" width="92" height="46" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
-        <text x="892" y="118" font-family="Georgia,serif" font-size="12.5" fill="#C9921A" text-anchor="middle" font-weight="bold">Domain &amp;</text>
-        <text x="892" y="134" font-family="Georgia,serif" font-size="12.5" fill="#C9921A" text-anchor="middle" font-weight="bold">Pedagogy</text>
-        <path d="M 762 210 L 848 210" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
-        <rect x="848" y="188" width="88" height="44" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
-        <text x="892" y="208" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Building</text>
-        <text x="892" y="223" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Leader</text>
-        <path d="M 756 228 Q 806 282 852 296" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
-        <rect x="852" y="274" width="80" height="44" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
-        <text x="892" y="294" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">System</text>
-        <text x="892" y="309" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Leader</text>
+        <path d="M 155 118 L 190 155" fill="none" stroke="#0D7C8F" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="192" y="143" width="100" height="38" rx="4" fill="#071e2e" stroke="#0D7C8F" stroke-width="1.6"/>
+        <text x="242" y="160" font-family="Georgia,serif" font-size="13" fill="#0D7C8F" text-anchor="middle" font-weight="bold">Apprentice</text>
+        <text x="242" y="175" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" text-anchor="middle" opacity="0.85">4,500+ hours</text>
+        <path d="M 292 163 L 328 193" fill="none" stroke="#0D7C8F" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <path d="M 152 210 L 192 218" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="192" y="205" width="100" height="38" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="242" y="222" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Resident</text>
+        <text x="242" y="237" font-family="Georgia,serif" font-size="11" fill="#2a9d6e" text-anchor="middle" opacity="0.85">1,200–2,000 hours</text>
+        <path d="M 292 225 L 328 218" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
+        <path d="M 152 298 Q 238 298 328 230" fill="none" stroke="#0D7C8F" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.8"/>
+        <text x="224" y="292" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" opacity="0.85" text-anchor="middle">university degree</text>
         <circle cx="350" cy="210" r="36" fill="#0F2240" stroke="#F8F5F0" stroke-width="2.5"/>
         <circle cx="350" cy="210" r="11" fill="#F8F5F0" opacity="0.1"/>
         <circle cx="350" cy="210" r="6" fill="#F8F5F0"/>
+        <text x="350" y="257" font-family="Georgia,serif" font-size="13.5" fill="#F8F5F0" text-anchor="middle" font-weight="bold">The Classroom</text>
+        <path d="M 386 210 L 416 210" fill="none" stroke="#2a9d6e" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="414" y="192" width="78" height="36" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="453" y="214" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">New Teacher</text>
+        <path d="M 492 210 L 510 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="512" y="188" width="78" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="551" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Developing</text>
+        <text x="551" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
+        <path d="M 590 210 L 608 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="610" y="188" width="88" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="654" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Accomplished</text>
+        <text x="654" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
+        <path d="M 698 210 L 716 210" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <circle cx="740" cy="210" r="22" fill="#0F2240" stroke="#C9921A" stroke-width="2.5"/>
+        <circle cx="740" cy="210" r="7" fill="#C9921A" opacity="1"/>
+        <text x="740" y="247" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Mentor Teacher</text>
+        <path d="M 758 192 Q 808 138 854 122" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="856" y="103" width="72" height="38" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
+        <text x="892" y="120" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Domain &amp;</text>
+        <text x="892" y="135" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Pedagogy</text>
+        <path d="M 762 210 L 854 210" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="856" y="192" width="72" height="36" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
+        <text x="892" y="208" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Building</text>
+        <text x="892" y="223" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Leader</text>
+        <path d="M 758 228 Q 808 282 854 296" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <rect x="856" y="278" width="72" height="36" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
+        <text x="892" y="294" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">System</text>
+        <text x="892" y="309" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Leader</text>
         <text x="480" y="378" font-family="Georgia,serif" font-size="12" fill="#F8F5F0" opacity="0.55" text-anchor="middle" font-style="italic">Every educator. Every stage. One arc.</text>
       </svg>
     </div>
 
-    <!-- 9 Stages - Three Color-Coded Entry Points -->
+    <!-- 9 Stages — Three Color-Coded Entry Points -->
     <div class="arc-cards-label">
       <span>The Nine Stages: Three Entry Points</span>
     </div>
@@ -829,7 +682,7 @@ footer { background: #050c17; padding: 56px; }
         <div class="arc-phase-header-dot" aria-hidden="true"></div>
         <span class="arc-phase-header-label">Getting to the Classroom</span>
         <div class="arc-phase-rule" aria-hidden="true"></div>
-        <span class="arc-phase-header-num">Stages 01 - 03</span>
+        <span class="arc-phase-header-num">Stages 01 – 03</span>
       </div>
       <div class="arc-card">
         <div class="arc-card-num">01</div>
@@ -857,7 +710,7 @@ footer { background: #050c17; padding: 56px; }
         <div class="arc-phase-header-dot" aria-hidden="true"></div>
         <span class="arc-phase-header-label">Excelling in the Classroom</span>
         <div class="arc-phase-rule" aria-hidden="true"></div>
-        <span class="arc-phase-header-num">Stages 04 - 06</span>
+        <span class="arc-phase-header-num">Stages 04 – 06</span>
       </div>
       <div class="arc-card">
         <div class="arc-card-num">04</div>
@@ -885,7 +738,7 @@ footer { background: #050c17; padding: 56px; }
         <div class="arc-phase-header-dot" aria-hidden="true"></div>
         <span class="arc-phase-header-label">Leading Beyond the Classroom</span>
         <div class="arc-phase-rule" aria-hidden="true"></div>
-        <span class="arc-phase-header-num">Stages 07 - 09</span>
+        <span class="arc-phase-header-num">Stages 07 – 09</span>
       </div>
       <div class="arc-card">
         <div class="arc-card-num">07</div>
@@ -918,28 +771,28 @@ footer { background: #050c17; padding: 56px; }
     <div class="frameworks-header">
       <div class="eyebrow">How We Work</div>
       <h2>Every engagement starts<br>with your priority.</h2>
-      <p>We don't show up with a pre-packaged solution. We start with a conversation about what's at the top of your list, and build from there. Every EA engagement has a front door tailored to where you actually are.</p>
+      <p>We don't show up with a pre-packaged solution. We start with a conversation about what's at the top of your list, and build from there. Every Education Accelerated engagement has a front door tailored to where you actually are.</p>
     </div>
 
     <!-- ENGAGEMENT FRONT DOORS -->
     <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:2px; margin-bottom:48px;">
       <div style="padding:32px 28px; background:var(--cream); border-top:3px solid var(--gold);">
-        <div style="color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 1</div>
+        <div style="color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 01</div>
         <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.1rem; font-weight:700; margin-bottom:10px;">Visioning &amp; Alignment</div>
         <div style="color:var(--text-light); font-size:0.88rem; line-height:1.75;">Community visioning on how to bring residency models, collaborative teaching teams, purpose-driven learning, and deeper learning to life within your district. The right first move when your community needs a shared direction before it can move.</div>
       </div>
       <div style="padding:32px 28px; background:#fff; border-top:3px solid var(--teal);">
-        <div style="color:var(--teal); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 2</div>
+        <div style="color:var(--teal); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 02</div>
         <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.1rem; font-weight:700; margin-bottom:10px;">Grow Your Own</div>
         <div style="color:var(--text-light); font-size:0.88rem; line-height:1.75;">Build a homegrown teacher pipeline through the Arc of an Educator program, identifying future educators in your high schools and communities and growing them into the classroom with structured mentorship, clinical hours, and competency milestones.</div>
       </div>
       <div style="padding:32px 28px; background:#fff; border-top:3px solid var(--navy);">
-        <div style="color:var(--navy); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 3</div>
+        <div style="color:var(--navy); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 03</div>
         <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.1rem; font-weight:700; margin-bottom:10px;">Mentor Depth &amp; Capacity</div>
         <div style="color:var(--text-light); font-size:0.88rem; line-height:1.75;">Develop the mentors who develop everyone else. Targeted programs that deepen mentor capacity and infrastructure, so your district can consistently support early-stage educators instead of leaving them to figure it out alone.</div>
       </div>
       <div style="padding:32px 28px; background:var(--cream); border-top:3px solid var(--gold);">
-        <div style="color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 4</div>
+        <div style="color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Front Door 04</div>
         <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.1rem; font-weight:700; margin-bottom:10px;">Leadership &amp; Ecosystem Transformation</div>
         <div style="color:var(--text-light); font-size:0.88rem; line-height:1.75;">Grow leadership capacity for district-level ecosystem transformation, from building leaders to system leaders. For superintendents ready to move from managing a system to redesigning one.</div>
       </div>
@@ -954,18 +807,18 @@ footer { background: #050c17; padding: 56px; }
     <div class="frameworks-header" style="margin-bottom:40px;">
       <div class="eyebrow">Our Frameworks</div>
       <h2>Structured. Targeted. Proven.</h2>
-      <p>Every EA engagement is structured around two proprietary frameworks. They are what separate a consulting visit from a lasting change in how a system operates.</p>
+      <p>Every Education Accelerated engagement is structured around two proprietary frameworks. They are what separate a consulting visit from a lasting change in how a system operates.</p>
     </div>
 
     <div class="frameworks-two">
       <div class="framework-card">
         <div class="framework-name">FUSION</div>
         <div class="framework-acronym">Innovative Planning Process</div>
-        <div class="framework-desc">The alternative to traditional strategic planning. EA's Think Tank model brings every voice into the room, board members, teachers, parents, and students, and produces a prioritized action architecture in days, not years. Systems that have tried conventional planning and found it too slow, too top-down, or too forgettable use FUSION instead.</div>
+        <div class="framework-desc">The alternative to traditional strategic planning. Education Accelerated's Think Tank model brings every voice into the room, board members, teachers, parents, and students, and produces a prioritized action architecture in days, not years. Systems that have tried conventional planning and found it too slow, too top-down, or too forgettable use FUSION instead.</div>
       </div>
       <div class="framework-card">
         <div class="framework-name">KeySTONE</div>
-        <div class="framework-acronym">Structural &middot; Timeless &middot; Organizational &middot; Non-negotiable &middot; Ecosystem</div>
+        <div class="framework-acronym">Structural · Timeless · Organizational · Non-negotiable · Ecosystem</div>
         <div class="framework-desc">The model that separates structural priorities from noise. Not every initiative is a KeySTONE move. The ones that are correctly identified reshape how an entire system allocates its energy. KeySTONE keeps leadership focused on what will still matter in ten years.</div>
       </div>
     </div>
@@ -973,7 +826,7 @@ footer { background: #050c17; padding: 56px; }
     <div class="framework-card" style="margin-top:2px; border-top:3px solid var(--teal);">
       <div class="framework-name">Global Community of Practice</div>
       <div class="framework-acronym">The Learning Never Stops</div>
-      <div class="framework-desc">Residency is the beginning, not the end. EA connects educators across schools, systems, and countries, creating an ongoing professional community that supports every stage of the Arc. An induction teacher in Colorado and a mentor teacher in Panama participate in the same professional conversation. A building leader in Guatemala learns alongside a system leader in New Zealand. True professional mastery is built in community, sustained across a career.</div>
+      <div class="framework-desc">Residency is the beginning, not the end. Education Accelerated connects educators across schools, systems, and countries, creating an ongoing professional community that supports every stage of the Arc. An induction teacher in Colorado and a mentor teacher in Panama participate in the same professional conversation. A building leader in Guatemala learns alongside a system leader in New Zealand. True professional mastery is built in community, sustained across a career.</div>
     </div>
 
     <div style="margin-top:32px; display:flex; flex-direction:column; gap:2px;">
@@ -981,25 +834,25 @@ footer { background: #050c17; padding: 56px; }
         <div>
           <div style="color:var(--teal); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:6px;">Thought Leadership</div>
           <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:4px;">Educator Ecosystems</div>
-          <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">Design Principles and Global Strategies for Human-Centered Talent Development &nbsp;&middot;&nbsp; Education Accelerated, March 2026</div>
+          <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">Design Principles and Global Strategies for Human-Centered Talent Development &nbsp;·&nbsp; Education Accelerated, March 2026</div>
         </div>
-        <a href="../assets/documents/educator-ecosystems.html" target="_blank" rel="noopener" style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View Whitepaper &rarr;</a>
+        <a href="downloads/EA_Educator_Ecosystems_Whitepaper.pdf" download style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">Download Whitepaper &darr;</a>
       </div>
       <div style="padding:28px 32px; background:#fff; border-left:4px solid var(--teal); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
         <div>
           <div style="color:var(--teal); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:6px;">Case Study</div>
           <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:4px;">Rethinking Educational Progress</div>
-          <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">A New Paradigm for Local and Global Impact &nbsp;&middot;&nbsp; Graded, The American School of Sao Paulo &nbsp;&middot;&nbsp; 2025</div>
+          <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">A New Paradigm for Local and Global Impact &nbsp;·&nbsp; Graded, The American School of São Paulo &nbsp;·&nbsp; 2025</div>
         </div>
-        <a href="../assets/documents/graded-thinktank-case-study.html" target="_blank" rel="noopener" style="display:inline-block; padding:14px 28px; background:var(--teal); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View Case Study &rarr;</a>
+        <a href="downloads/Graded_ThinkTank_CaseStudy.pdf" download style="display:inline-block; padding:14px 28px; background:var(--teal); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">Download Case Study &darr;</a>
       </div>
       <div style="padding:28px 32px; background:var(--cream); border-left:4px solid var(--navy); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
         <div>
-          <div style="color:var(--navy); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:6px;">Featured Series &nbsp;&middot;&nbsp; 30,000+ Reads</div>
+          <div style="color:var(--navy); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:6px;">Featured Series &nbsp;·&nbsp; 30,000+ Reads</div>
           <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:4px;">The Complete 13 Pillars</div>
-          <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">From Factory to Ecosystem: A Championship Playbook for Educational Excellence &nbsp;&middot;&nbsp; David B. Palumbo</div>
+          <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">From Factory to Ecosystem: A Championship Playbook for Educational Excellence &nbsp;·&nbsp; David B. Palumbo</div>
         </div>
-        <a href="../assets/documents/factory-to-ecosystem-playbook.html" target="_blank" rel="noopener" style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View the Playbook &rarr;</a>
+        <a href="downloads/EA_13_Pillars_Factory_to_Ecosystem.pdf" download style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">Download the Playbook &darr;</a>
       </div>
     </div>
 
@@ -1019,42 +872,35 @@ footer { background: #050c17; padding: 56px; }
     </div>
     <div class="work-grid work-grid-3">
       <div class="work-card">
-        <img src="../assets/images/aps-destination.jpg" alt="Students in a classroom at Aurora Public Schools">
+        <img src="images/aps-destination.jpg" alt="Students in a classroom at Aurora Public Schools">
         <div class="work-card-body">
           <div class="work-location">Aurora, Colorado</div>
           <h3>Aurora Public Schools</h3>
-          <p>Destination District work, leadership alignment, and educator development architecture in one of Colorado’s most diverse urban school systems.</p>
+          <p>Education Accelerated brought the FUSION Process and Think Tank methodology to APS, convening district leadership around a shared strategic direction and building the educator development infrastructure that makes personalized learning pathways possible at scale for every student Superintendent Giles' Destination District serves.</p>
           <span class="work-card-type">U.S. District Partnership</span><br>
           <button class="work-link" onclick="openModal('aps')" aria-haspopup="dialog">Read the Case Study &rarr;</button>
         </div>
       </div>
       <div class="work-card">
-        <img src="../assets/images/cag-stage.jpg" alt="Presenter on stage at the Colegio Americano de Guatemala Think Tank">
+        <img src="images/cag-stage.jpg" alt="Presenter on stage at the Colegio Americano de Guatemala Think Tank">
         <div class="work-card-body">
           <div class="work-location">Guatemala City</div>
           <h3>Colegio Americano de Guatemala</h3>
-          <p>A three-day Future of Learning Think Tank that helped nearly fifty stakeholders align around seven KeySTONE priorities.</p>
+          <p>Nearly fifty stakeholders, board members, teachers, parents, and students, gathered for a 3-day Future of Learning Think Tank. Seven KeySTONE priorities. One unified direction for the next 80 years.</p>
           <span class="work-card-type">International School</span><br>
           <button class="work-link" onclick="openModal('cag')" aria-haspopup="dialog">Read the Case Study &rarr;</button>
         </div>
       </div>
       <div class="work-card">
-        <img src="../assets/images/aaie-map.jpg" alt="World map showing 21 countries represented at the AAIE Think Tank">
+        <img src="images/aaie-map.jpg" alt="World map showing 21 countries represented at the AAIE Think Tank">
         <div class="work-card-body">
-          <div class="work-location">21 Countries &middot; 5 Continents</div>
+          <div class="work-location">21 Countries · 5 Continents</div>
           <h3>AAIE Think Tank: Washington, DC</h3>
-          <p>A global leadership Think Tank that brought together forty international school leaders and sent each home with a concrete innovation playbook.</p>
+          <p>Forty international school leaders. Twenty-one countries. Five continents. Education Accelerated designed and facilitated a two-day Think Tank that turned friction into forward momentum, sending every leader home with a concrete innovation playbook.</p>
           <span class="work-card-type">Association Partnership</span><br>
           <button class="work-link" onclick="openModal('aaie')" aria-haspopup="dialog">Read the Case Study &rarr;</button>
         </div>
       </div>
-    </div>
-    <div style="margin-top:28px; padding:28px 32px; background:#132642; border-left:4px solid var(--gold); display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;">
-      <div>
-        <div style="color:var(--gold); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:8px;">Library</div>
-        <div style="font-family:'Playfair Display',serif; color:#fff; font-size:1.25rem; line-height:1.4;">Case studies, whitepapers, and playbooks.</div>
-      </div>
-      <a href="../assets/documents/resources.html" style="display:inline-block; padding:14px 28px; background:var(--gold); color:#fff; text-decoration:none; font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; white-space:nowrap;">View Full Resource Library</a>
     </div>
   </div>
 </section>
@@ -1101,11 +947,11 @@ footer { background: #050c17; padding: 56px; }
     <div class="team-header">
       <div class="eyebrow">The People Behind the Work</div>
       <h2>Built by practitioners,<br>not theorists.</h2>
-      <p>Every member of the EA team has stood in front of a classroom, led a school, or built a system from scratch. We don't consult from a distance. We work from inside.</p>
+      <p>Every member of the Education Accelerated team has stood in front of a classroom, led a school, or built a system from scratch. We don't consult from a distance. We work from inside.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <img src="../assets/images/team-david.jpg" alt="Dr. David B. Palumbo" class="team-photo" style="object-position: center center;">
+        <img src="images/team-david.jpg" alt="Dr. David B. Palumbo" class="team-photo" style="object-position: center center;">
         <div class="team-info">
           <div class="team-name">Dr. David B. Palumbo</div>
           <div class="team-title">Co-Founder &amp; Chairman</div>
@@ -1114,7 +960,7 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-alicia.jpg" alt="Alicia Densford" class="team-photo" style="object-position: center top;">
+        <img src="images/team-alicia.jpg" alt="Alicia Densford" class="team-photo" style="object-position: center top;">
         <div class="team-info">
           <div class="team-name">Alicia Densford</div>
           <div class="team-title">Co-Founder &amp; CEO</div>
@@ -1123,7 +969,7 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-zoltan.jpg" alt="Dr. Zoltan Sarda" class="team-photo" style="object-position: right center;">
+        <img src="images/team-zoltan.jpg" alt="Dr. Zoltan Sarda" class="team-photo" style="object-position: 70% center;">
         <div class="team-info">
           <div class="team-name">Dr. Zoltan Sarda</div>
           <div class="team-title">Managing Partner, Learning Experience Design</div>
@@ -1132,7 +978,7 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-rich.jpg" alt="Richard Boerner" class="team-photo" style="object-position: center center;">
+        <img src="images/team-rich.jpg" alt="Richard Boerner" class="team-photo" style="object-position: center center;">
         <div class="team-info">
           <div class="team-name">Richard Boerner</div>
           <div class="team-title">Chief Innovation Officer</div>
@@ -1143,7 +989,7 @@ footer { background: #050c17; padding: 56px; }
     </div>
     <div class="team-row-2 team-row-center" style="margin-top:2px;">
       <div class="team-card">
-        <img src="../assets/images/team-charlie.jpg" alt="Dr. Charles Xavier" class="team-photo" style="object-position: center center;">
+        <img src="images/team-charlie.jpg" alt="Dr. Charles Xavier" class="team-photo" style="object-position: center center;">
         <div class="team-info">
           <div class="team-name">Dr. Charles Xavier</div>
           <div class="team-title">Managing Partner, Educational Neuroscience</div>
@@ -1152,16 +998,16 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-fred.jpg" alt="Fred Greene, III" class="team-photo" style="object-position: 32% center;">
+        <img src="images/team-fred.jpg" alt="Fred Greene, III" class="team-photo" style="object-position: center top;">
         <div class="team-info">
           <div class="team-name">Fred Greene, III</div>
           <div class="team-title">Operating Partner, Learning Environments</div>
-          <div class="team-bio">Two decades of large-scale real estate development, most of it with educational institutions. Co-founder of Project Destined, a national nonprofit that teaches real estate development to urban youth. Now applying that expertise to the conviction EA is built on: that world-class educators deserve world-class environments to live, learn, and work in.</div>
+          <div class="team-bio">Two decades of large-scale real estate development, most of it with educational institutions. Co-founder of Project Destined, a national nonprofit that teaches real estate development to urban youth. Now applying that expertise to the conviction Education Accelerated is built on: that world-class educators deserve world-class environments to live, learn, and work in.</div>
           <a href="https://www.linkedin.com/in/fredgreeneiii/" target="_blank" rel="noopener" class="team-linkedin"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-lisa.jpg" alt="Dr. Lisa McCray Cannon" class="team-photo" style="object-position: center top;">
+        <img src="images/team-lisa.jpg" alt="Dr. Lisa McCray Cannon" class="team-photo" style="object-position: center top;">
         <div class="team-info">
           <div class="team-name">Dr. Lisa McCray Cannon</div>
           <div class="team-title">Operating Partner, Collaborative Teaching Teams</div>
@@ -1170,7 +1016,7 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-jake.jpg" alt="Jake Nelson" class="team-photo" style="object-position: center top;">
+        <img src="images/team-jake.jpg" alt="Jake Nelson" class="team-photo" style="object-position: center top;">
         <div class="team-info">
           <div class="team-name">Jake Nelson</div>
           <div class="team-title">Business Analytics Intern</div>
@@ -1188,55 +1034,27 @@ footer { background: #050c17; padding: 56px; }
   <div class="cta-inner">
     <span class="eyebrow">Begin the Journey</span>
     <h2>Your educators are ready.<br>Your learners are waiting.</h2>
-    <p>We know what thriving educators look like, and we know what they make possible for every student in front of them. EA works with a small number of partners at any given time. That's by design. Tell us what's at the top of your list and we'll take it from there.</p>
+    <p>We know what thriving educators look like, and we know what they make possible for every student in front of them. Education Accelerated works with a small number of partners at any given time. That's by design. Tell us what's at the top of your list and we'll take it from there.</p>
     <form class="cta-form" action="https://formspree.io/f/xdawdabo" method="POST" aria-label="Contact Education Accelerated">
-      <fieldset class="form-section">
-        <legend class="form-section-label">Contact</legend>
-        <label for="contact-name" class="visually-hidden">Your name</label>
-        <input id="contact-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
-        <label for="contact-email" class="visually-hidden">Your email</label>
-        <input id="contact-email" type="email" name="email" placeholder="Your email" required autocomplete="email">
-        <label for="contact-org" class="visually-hidden">School or organization</label>
-        <input id="contact-org" type="text" name="organization" placeholder="School or organization" autocomplete="organization">
-      </fieldset>
-      <fieldset class="form-section contact-interest-block">
-        <legend class="form-section-label">What's at the top of your list?</legend>
-        <div class="contact-interest-group">
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Teacher Pipeline: Grow Your Own">
-            <span class="contact-interest-card">Teacher Pipeline: Grow Your Own</span>
-          </label>
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Residency Models & Collaborative Teaching Teams">
-            <span class="contact-interest-card">Residency Models &amp; Collaborative Teaching Teams</span>
-          </label>
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Mentor Depth & Capacity for Early-Stage Educators">
-            <span class="contact-interest-card">Mentor Depth &amp; Capacity for Early-Stage Educators</span>
-          </label>
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Purpose-Driven and Deeper Learning Transformation">
-            <span class="contact-interest-card">Purpose-Driven and Deeper Learning Transformation</span>
-          </label>
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Leadership & District-Level Ecosystem Transformation">
-            <span class="contact-interest-card">Leadership &amp; District-Level Ecosystem Transformation</span>
-          </label>
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Stakeholder Visioning & Strategic Alignment">
-            <span class="contact-interest-card">Stakeholder Visioning &amp; Strategic Alignment</span>
-          </label>
-          <label class="contact-interest-option">
-            <input type="checkbox" name="interest[]" value="Something Else: Let's Talk">
-            <span class="contact-interest-card">Something Else: Let's Talk</span>
-          </label>
-        </div>
-      </fieldset>
-      <fieldset class="form-section contact-message-block">
-        <legend class="form-section-label">Tell Us Where You're Trying to Go</legend>
-        <label for="contact-message" class="visually-hidden">Tell us where you're trying to go</label>
-        <textarea id="contact-message" name="message" placeholder="Share a little context..."></textarea>
-      </fieldset>
+      <label for="contact-name" class="visually-hidden">Your name</label>
+      <input id="contact-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
+      <label for="contact-email" class="visually-hidden">Your email</label>
+      <input id="contact-email" type="email" name="email" placeholder="Your email" required autocomplete="email">
+      <label for="contact-org" class="visually-hidden">School or organization</label>
+      <input id="contact-org" type="text" name="organization" placeholder="School or organization" autocomplete="organization">
+      <label for="contact-interest" class="visually-hidden">What's at the top of your list?</label>
+      <select id="contact-interest" name="interest" aria-label="What's at the top of your list?">
+        <option value="" disabled selected>What's at the top of your list?</option>
+        <option>Teacher pipeline: Grow Your Own</option>
+        <option>Residency models &amp; collaborative teaching teams</option>
+        <option>Mentor depth &amp; capacity for early-stage educators</option>
+        <option>Purpose-driven and deeper learning transformation</option>
+        <option>Leadership &amp; district-level ecosystem transformation</option>
+        <option>Stakeholder visioning &amp; strategic alignment</option>
+        <option>Something else: let's talk</option>
+      </select>
+      <label for="contact-message" class="visually-hidden">Tell us where you're trying to go</label>
+      <textarea id="contact-message" name="message" placeholder="Tell us where you're trying to go."></textarea>
       <button type="submit">Start the Conversation</button>
     </form>
     <p class="cta-note">We work with a small number of partners. We'll respond within one business day.</p>
@@ -1269,23 +1087,23 @@ footer { background: #050c17; padding: 56px; }
 <div id="modal-aps" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-aps-title" aria-hidden="true">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('aps')" aria-label="Close case study">&times;</button>
-    <img src="../assets/images/aps-partnership.jpg" alt="Teachers collaborating at Aurora Public Schools" class="modal-hero-img">
+    <img src="images/aps-partnership.jpg" alt="Teachers collaborating at Aurora Public Schools" class="modal-hero-img">
     <div class="modal-body">
-      <div class="modal-context">Domestic Partnership &nbsp;&middot;&nbsp; Aurora, Colorado</div>
+      <div class="modal-context">Domestic Partnership &nbsp;·&nbsp; Aurora, Colorado</div>
       <h2 id="modal-aps-title">Building the Destination District</h2>
-      <p class="modal-sub">Aurora Public Schools &nbsp;&middot;&nbsp; Aurora, Colorado</p>
+      <p class="modal-sub">Aurora Public Schools &nbsp;·&nbsp; Aurora, Colorado</p>
       <p>Aurora Public Schools serves students from more than 130 countries who speak over 160 languages, one of the most diverse urban school systems in Colorado. When Superintendent Michael Giles arrived with a mandate to make APS a "Destination District," Education Accelerated was engaged to build the educator development infrastructure that vision requires.</p>
       <h3>The Challenge</h3>
       <p>A destination district is not declared. It is built. APS needed more than a vision. It needed the structural foundation for system-level leadership alignment, shared commitment, shared language, and the working relationships that turn a bold aspiration into a coordinated reality.</p>
-      <h3>EA's Role</h3>
+      <h3>Education Accelerated's Role</h3>
       <p>Education Accelerated brought the FUSION Process and Think Tank methodology to APS, convening district leadership around a shared strategic direction, building the collaborative infrastructure that makes alignment stick, and designing the development architecture that carries educators from aspiration through excellence.</p>
       <div class="modal-pullquote">
         <p>"This is important work that I personally prioritize. Education Accelerated brought the clarity and structure we needed, a roadmap that makes building a true destination district feel not just visionary, but doable."</p>
-        <cite>Michael Giles, Jr. &nbsp;&middot;&nbsp; Superintendent, Aurora Public Schools</cite>
+        <cite>Michael Giles, Jr. &nbsp;·&nbsp; Superintendent, Aurora Public Schools</cite>
       </div>
       <div class="modal-cta-row">
-        <p>To learn how EA can support your district's educator development strategy:</p>
-        <a href="#contact" class="modal-cta-btn" onclick="closeModal('aps')">Talk to Us About Your District</a>
+        <p>To learn how Education Accelerated can support your district's educator development strategy:</p>
+        <a href="/cdn-cgi/l/email-protection#dbbfbaadb2bf9bbebfaeb8baafb2b4b5bab8b8beb7bea9baafbebff5b8b4b6" class="modal-cta-btn">Talk to Us About Your District</a>
         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee;">
           <button onclick="closeModal('aps')" style="background:none; border:none; cursor:pointer; color:var(--teal); font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; padding:0; font-family:'Inter',sans-serif;">&larr; Back to Our Work</button>
         </div>
@@ -1298,19 +1116,19 @@ footer { background: #050c17; padding: 56px; }
 <div id="modal-cag" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-cag-title" aria-hidden="true">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('cag')" aria-label="Close case study">&times;</button>
-    <img src="../assets/images/cag-stage.jpg" alt="Speaker presenting on stage at the CAG Future of Learning Think Tank" class="modal-hero-img">
+    <img src="images/cag-stage.jpg" alt="Speaker presenting on stage at the CAG Future of Learning Think Tank" class="modal-hero-img">
     <div class="modal-gallery">
-      <img src="../assets/images/cag-room.jpg" alt="Nearly fifty stakeholders gathered in the Think Tank main room">
-      <img src="../assets/images/cag-facilitation.jpg" alt="Facilitator guiding a group activity">
-      <img src="../assets/images/cag-discussion.jpg" alt="Small group in focused discussion">
-      <img src="../assets/images/cag-whiteboard.jpg" alt="Ideas mapped on a large whiteboard">
-      <img src="../assets/images/cag-student-mic.jpg" alt="Student speaking into the microphone">
-      <img src="../assets/images/cag-applause.jpg" alt="Room applauding at session conclusion">
+      <img src="images/cag-room.jpg" alt="Nearly fifty stakeholders gathered in the Think Tank main room">
+      <img src="images/cag-facilitation.jpg" alt="Facilitator guiding a group activity">
+      <img src="images/cag-discussion.jpg" alt="Small group in focused discussion">
+      <img src="images/cag-whiteboard.jpg" alt="Ideas mapped on a large whiteboard">
+      <img src="images/cag-student-mic.jpg" alt="Student speaking into the microphone">
+      <img src="images/cag-applause.jpg" alt="Room applauding at session conclusion">
     </div>
     <div class="modal-body">
-      <div class="modal-context">International Engagement &nbsp;&middot;&nbsp; Guatemala City &nbsp;&middot;&nbsp; October 2025</div>
+      <div class="modal-context">International Engagement &nbsp;·&nbsp; Guatemala City &nbsp;·&nbsp; October 2025</div>
       <h2 id="modal-cag-title">From Possibility to Purpose</h2>
-      <p class="modal-sub">Colegio Americano de Guatemala &nbsp;&middot;&nbsp; Future of Learning Think Tank</p>
+      <p class="modal-sub">Colegio Americano de Guatemala &nbsp;·&nbsp; Future of Learning Think Tank</p>
       <p>As CAG marked its 80th year, nearly fifty stakeholders, board members, school leaders, teachers, parents, and students, gathered not because something was broken, but because something important was at stake. The question was not "Are we good enough?" It was harder and more honest: <em>Who do we need to become for the next generation of learners?</em></p>
       <h3>The Process</h3>
       <p>Education Accelerated's FUSION Process and IDEAL Framework structured three days of work: Day One challenged participants to reimagine learning for 2035. Day Two moved from system critique to human development, redesigning learning around identity, wellbeing, and agency. Day Three turned ideas into architecture, identifying which moves were structural enough to reshape the whole ecosystem.</p>
@@ -1326,15 +1144,15 @@ footer { background: #050c17; padding: 56px; }
       </div>
       <div class="modal-pullquote">
         <p>"Education Accelerated helps us challenge the limits and the boundaries of what is possible at CAG in ways that seem aligned, innovative, and actionable."</p>
-        <cite>Don Francis &nbsp;&middot;&nbsp; General Director, Colegio Americano de Guatemala</cite>
+        <cite>Don Francis &nbsp;·&nbsp; General Director, Colegio Americano de Guatemala</cite>
       </div>
       <div class="modal-pullquote" style="margin-top:2px;">
         <p>"Through their Think Tank process, Education Accelerated focused our community. Every member of our community has the responsibility to protect the essence of each student every day, to see their brilliance every day. So when they are in 12th grade, they're not worrying about what's my passion, what's my purpose, because they already know who they are and they're seen for who they are."</p>
-        <cite>Don Francis &nbsp;&middot;&nbsp; General Director, Colegio Americano de Guatemala</cite>
+        <cite>Don Francis &nbsp;·&nbsp; General Director, Colegio Americano de Guatemala</cite>
       </div>
       <div class="modal-cta-row">
         <p>To bring a Think Tank to your school community:</p>
-        <a href="#contact" class="modal-cta-btn" onclick="closeModal('cag')">Bring a Think Tank to Your School</a>
+        <a href="/cdn-cgi/l/email-protection#a7c3c6d1cec3e7c2c3d2c4c6d3cec8c9c6c4c4c2cbc2d5c6d3c2c389c4c8ca" class="modal-cta-btn">Bring a Think Tank to Your School</a>
         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee;">
           <button onclick="closeModal('cag')" style="background:none; border:none; cursor:pointer; color:var(--teal); font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; padding:0; font-family:'Inter',sans-serif;">&larr; Back to Our Work</button>
         </div>
@@ -1347,24 +1165,24 @@ footer { background: #050c17; padding: 56px; }
 <div id="modal-aaie" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-aaie-title" aria-hidden="true">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('aaie')" aria-label="Close case study">&times;</button>
-    <img src="../assets/images/aaie-map.jpg" alt="World map showing 21 countries and 5 continents represented at the AAIE Think Tank" class="modal-hero-img">
+    <img src="images/aaie-map.jpg" alt="World map showing 21 countries and 5 continents represented at the AAIE Think Tank" class="modal-hero-img">
     <div class="modal-body">
-      <div class="modal-context">Association Partnership &nbsp;&middot;&nbsp; Washington, DC &nbsp;&middot;&nbsp; January 2025</div>
+      <div class="modal-context">Association Partnership &nbsp;·&nbsp; Washington, DC &nbsp;·&nbsp; January 2025</div>
       <h2 id="modal-aaie-title">Igniting Global Leadership</h2>
-      <p class="modal-sub">AAIE Think Tank &nbsp;&middot;&nbsp; 21 Countries &nbsp;&middot;&nbsp; 5 Continents</p>
+      <p class="modal-sub">AAIE Think Tank &nbsp;·&nbsp; 21 Countries &nbsp;·&nbsp; 5 Continents</p>
       <p>In January 2025, Education Accelerated partnered with the Association for the Advancement of International Education (AAIE) to host a Think Tank at their annual meeting in Washington, DC. Forty international school leaders from 21 countries and five continents convened, not to attend a conference, but to design one together.</p>
       <p>The central question: <em>How can educational leaders turn moments of opportunity and moments of friction into catalysts for sustainable innovation?</em></p>
       <h3>The Process: FUSION and ABCQ in Action</h3>
-      <p>EA's FUSION Process structured the experience across three phases: pre-work grounded in real school challenges, a two-day collaborative Think Tank using the ABCQ model (Assets, Barriers, Connections, Questions), and a personalized post-event innovation playbook every leader carried home.</p>
+      <p>Education Accelerated's FUSION Process structured the experience across three phases: pre-work grounded in real school challenges, a two-day collaborative Think Tank using the ABCQ model (Assets, Barriers, Connections, Questions), and a personalized post-event innovation playbook every leader carried home.</p>
       <h3>Key Insight: Connectors and Disruptors</h3>
       <p>Participants arrived believing they were either connectors or disruptors. By the end of day one, they recognized they needed to be both, knowing when to rally a community around shared vision and when to challenge the system to prevent complacency.</p>
       <div class="modal-pullquote">
         <p>"We brought together a group of individuals. We left with a network of like-minded, passionate leaders committed to working together as both connectors and disruptors, leading education forward."</p>
-        <cite>Participant &nbsp;&middot;&nbsp; AAIE Think Tank &nbsp;&middot;&nbsp; January 2025</cite>
+        <cite>Participant &nbsp;·&nbsp; AAIE Think Tank &nbsp;·&nbsp; January 2025</cite>
       </div>
       <div class="modal-cta-row">
         <p>To bring the FUSION Process to your school or association:</p>
-        <a href="#contact" class="modal-cta-btn" onclick="closeModal('aaie')">Bring a Think Tank to Your Association</a>
+        <a href="/cdn-cgi/l/email-protection#046065726d60446160716765706d6b6a65676761686176657061602a676b69" class="modal-cta-btn">Bring a Think Tank to Your Association</a>
         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee;">
           <button onclick="closeModal('aaie')" style="background:none; border:none; cursor:pointer; color:var(--teal); font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; padding:0; font-family:'Inter',sans-serif;">&larr; Back to Our Work</button>
         </div>
@@ -1374,7 +1192,7 @@ footer { background: #050c17; padding: 56px; }
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Modal accessibility
+// ── Modal accessibility ──────────────────────────────────────────────
 var lastFocused = null;
 var FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
@@ -1427,7 +1245,7 @@ document.querySelectorAll('.modal-overlay').forEach(function(el) {
   });
 });
 
-// Ticker pause
+// ── Ticker pause ─────────────────────────────────────────────────────
 (function() {
   var track = document.getElementById('ticker-track');
   var paused = false;
@@ -1452,44 +1270,6 @@ document.querySelectorAll('.modal-overlay').forEach(function(el) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     track.style.animation = 'none';
   }
-})();
-
-// Active section indicator
-(function() {
-  var navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-  var sectionMap = navLinks
-    .map(function(link) {
-      var target = document.querySelector(link.getAttribute('href'));
-      return target ? { link: link, section: target } : null;
-    })
-    .filter(Boolean);
-
-  if (!sectionMap.length) return;
-
-  function setActive(id) {
-    navLinks.forEach(function(link) {
-      link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
-    });
-  }
-
-  function updateActiveSection() {
-    var viewportMid = window.scrollY + (window.innerHeight * 0.52);
-    var currentId = '';
-
-    sectionMap.forEach(function(item) {
-      var sectionTop = item.section.offsetTop;
-      var sectionBottom = sectionTop + item.section.offsetHeight;
-      if (sectionTop <= viewportMid && sectionBottom >= viewportMid) {
-        currentId = item.section.id;
-      }
-    });
-
-    setActive(currentId);
-  }
-
-  window.addEventListener('scroll', updateActiveSection, { passive: true });
-  window.addEventListener('resize', updateActiveSection);
-  updateActiveSection();
 })();
 </script></body>
 </html>

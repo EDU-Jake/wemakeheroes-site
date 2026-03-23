@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources & Case Studies | Education Accelerated</title>
+<meta name="description" content="Explore Education Accelerated whitepapers, playbooks, case studies, and featured engagements in one place.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F2240;
+  --navy-deep: #07111f;
+  --teal: #0D7C8F;
+  --gold: #C9921A;
+  --gold-light: #e8b84b;
+  --warm-white: #F8F5F0;
+  --cream: #F2EDE4;
+  --text: #1a1a1a;
+  --text-light: #666;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--warm-white); }
+a { color: inherit; }
+.skip-link { position: absolute; top: -999px; left: -999px; background: var(--gold); color: #fff; padding: 12px 24px; font-size: 0.9rem; font-weight: 600; text-decoration: none; z-index: 9999; }
+.skip-link:focus { top: 12px; left: 12px; }
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 56px; height: 68px;
+  display: flex; align-items: center;
+  background: rgba(7,17,31,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,146,26,0.18);
+}
+.nav-logo { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 1.4rem; letter-spacing: 0.04em; text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links li { position: relative; }
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 24px 0 22px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.is-active { color: #fff; }
+.nav-links a.is-active::after { opacity: 1; transform: scaleX(1); }
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 50%;
+  min-width: 168px;
+  padding: 6px;
+  background: rgba(7,17,31,0.98);
+  border: 1px solid rgba(201,146,26,0.18);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.nav-dropdown a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.72);
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+.nav-dropdown a::after { display: none; }
+.nav-dropdown a::before {
+  content: 'Library';
+  color: rgba(255,255,255,0.9);
+}
+.nav-dropdown a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--gold);
+}
+.nav-has-dropdown:hover .nav-dropdown,
+.nav-has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.nav-cta { padding: 9px 24px; background: var(--gold); color: #fff; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+.nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
+.doc-header {
+  position: sticky;
+  top: 68px;
+  z-index: 950;
+  margin-top: 68px;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, #161b22 0%, #20262f 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.doc-header-inner {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+.hero {
+  background: linear-gradient(180deg, var(--navy) 0%, #142744 100%);
+  color: #fff;
+  padding: 120px 28px 72px;
+}
+.hero-inner, .section-inner { max-width: 1200px; margin: 0 auto; }
+.doc-breadcrumb {
+  margin: 0;
+  color: rgba(255,255,255,0.68);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+.doc-breadcrumb a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+.doc-breadcrumb a:hover {
+  color: var(--gold);
+}
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.hero p {
+  max-width: 760px;
+  color: rgba(255,255,255,0.72);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+.section { padding: 84px 28px; }
+.section-dark { background: var(--cream); }
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+.section-label {
+  color: var(--teal);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.section-header h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--navy);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.15;
+}
+.section-header p {
+  max-width: 520px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #ddd8ce;
+}
+.resource-card {
+  background: #fff;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 290px;
+}
+.resource-type {
+  color: var(--teal);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.resource-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--navy);
+  font-size: 1.18rem;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.resource-meta {
+  color: var(--text-light);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.resource-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  flex: 1;
+}
+.resource-link {
+  margin-top: 18px;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
+.work-card { background: #0d1f3a; overflow: hidden; }
+.work-card img { width: 100%; height: 220px; object-fit: cover; display: block; opacity: 0.82; transition: opacity 0.3s; }
+.work-card:hover img { opacity: 1; }
+.work-card-body { padding: 24px 22px; }
+.work-location { color: var(--gold); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.work-card h3 { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.05rem; line-height: 1.4; margin-bottom: 10px; }
+.work-card p { color: rgba(255,255,255,0.55); font-size: 0.84rem; line-height: 1.7; }
+.work-card-type { display: inline-block; margin-top: 14px; padding: 4px 10px; border: 1px solid rgba(201,146,26,0.4); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.work-link { display: inline-block; margin-top: 12px; color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-weight: 600; background: none; border: none; cursor: pointer; padding: 0; font-family: 'Inter', sans-serif; }
+.work-link:hover { color: var(--gold-light); }
+
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(7,17,31,0.93); overflow-y: auto; padding: 48px 24px; }
+.modal-box { max-width: 760px; margin: 0 auto; background: #fff; position: relative; }
+.modal-close {
+  position: fixed; top: 20px; right: 28px;
+  background: var(--navy); border: none; cursor: pointer;
+  color: var(--gold); font-size: 1.6rem; line-height: 1;
+  z-index: 2100; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-close:hover { background: var(--gold); color: #fff; }
+.modal-hero-img { width: 100%; display: block; max-height: 320px; object-fit: cover; }
+.modal-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.modal-gallery img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.modal-body { padding: 48px 48px 56px; }
+.modal-context { color: var(--teal); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+.modal-body h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); line-height: 1.2; margin-bottom: 8px; }
+.modal-body .modal-sub { font-family: 'Playfair Display', serif; font-style: italic; color: var(--text-light); font-size: 1.05rem; margin-bottom: 32px; }
+.modal-body p { font-size: 0.95rem; line-height: 1.85; color: var(--text-light); margin-bottom: 20px; }
+.modal-body h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); margin: 32px 0 12px; }
+.modal-pullquote { border-left: 4px solid var(--gold); padding: 20px 24px; background: var(--cream); margin: 32px 0; }
+.modal-pullquote p { font-family: 'Playfair Display', serif; font-style: italic; color: var(--navy); font-size: 1rem; line-height: 1.7; }
+.modal-pullquote cite { display: block; margin-top: 10px; color: var(--text-light); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-style: normal; }
+.modal-cta-row { border-top: 1px solid #eee; padding-top: 28px; margin-top: 8px; }
+.modal-cta-row p { font-size: 0.83rem; color: var(--text-light); margin-bottom: 6px; }
+.modal-cta-btn { display: inline-block; margin-top: 12px; padding: 14px 32px; background: var(--teal); color: #fff; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+footer { background: #050c17; padding: 56px 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-family: 'Playfair Display', serif; color: #fff; font-size: 1rem; }
+.footer-brand span { color: var(--gold); }
+.footer-tagline { color: rgba(255,255,255,0.3); font-size: 0.78rem; letter-spacing: 0.04em; font-style: italic; margin-top: 4px; }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { color: rgba(255,255,255,0.25); font-size: 0.75rem; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { color: rgba(255,255,255,0.2); font-size: 0.75rem; }
+@media (max-width: 980px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .doc-header { margin-top: 68px; padding: 8px 16px; }
+  .section-header { flex-direction: column; align-items: start; }
+  .resource-grid, .work-grid { grid-template-columns: 1fr; }
+  .modal-body { padding: 32px 24px 40px; }
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav aria-label="Main navigation">
+    <a href="../../updates01/index.html" class="nav-logo" aria-label="Education Accelerated: home">Education <span>Accelerated</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="../../updates01/index.html#arc">The Arc</a></li>
+      <li><a href="../../updates01/index.html#frameworks">How We Work</a></li>
+      <li class="nav-has-dropdown">
+        <a href="../../updates01/index.html#work" class="is-active">Our Work</a>
+        <div class="nav-dropdown">
+          <a href="resources.html"></a>
+        </div>
+      </li>
+      <li><a href="../../updates01/index.html#voices">Voices</a></li>
+      <li><a href="../../updates01/index.html#team">Team</a></li>
+      <li><a href="../../updates01/index.html#contact">Work With Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../../updates01/index.html#contact" class="nav-cta">Schedule a Conversation</a>
+    </div>
+  </nav>
+  <div class="doc-header">
+    <div class="doc-header-inner">
+      <p class="doc-breadcrumb"><a href="../../updates01/index.html#work">Our Work</a> &gt; Library</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>One place for the work,<br>the thinking, and the proof.</h1>
+      <p>Explore case studies, whitepapers, playbooks, and examples of the work that can help you clarify your next move.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Documents</div>
+          <h2>Whitepapers, playbooks,<br>and featured resources.</h2>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-type">Whitepaper</div>
+          <h3>Educator Ecosystems</h3>
+          <div class="resource-meta">Education Accelerated · March 2026</div>
+          <p>Design Principles and Global Strategies for Human-Centered Talent Development.</p>
+          <a class="resource-link" href="educator-ecosystems.html" target="_blank" rel="noopener">Read Online →</a>
+        </article>
+        <article class="resource-card">
+          <div class="resource-type">Case Study</div>
+          <h3>Rethinking Educational Progress</h3>
+          <div class="resource-meta">Graded, The American School of Sao Paulo · 2025</div>
+          <p>A new paradigm for local and global impact, captured as a browser-viewable case study resource.</p>
+          <a class="resource-link" href="graded-thinktank-case-study.html" target="_blank" rel="noopener">Read Online →</a>
+        </article>
+        <article class="resource-card">
+          <div class="resource-type">Playbook</div>
+          <h3>The Complete 13 Pillars</h3>
+          <div class="resource-meta">David B. Palumbo</div>
+          <p>From Factory to Ecosystem: A Championship Playbook for Educational Excellence.</p>
+          <a class="resource-link" href="factory-to-ecosystem-playbook.html" target="_blank" rel="noopener">Read Online →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Featured Work</div>
+          <h2>The places where heroes<br>are being made.</h2>
+        </div>
+      </div>
+      <div class="work-grid">
+        <div class="work-card" id="case-aps">
+          <img src="../images/aps-destination.jpg" alt="Students in a classroom at Aurora Public Schools">
+          <div class="work-card-body">
+            <div class="work-location">Aurora, Colorado</div>
+            <h3>Aurora Public Schools</h3>
+            <p>EA brought the FUSION Process and Think Tank methodology to APS, convening district leadership around a shared strategic direction and building the educator development infrastructure that makes personalized learning pathways possible at scale.</p>
+            <span class="work-card-type">U.S. District Partnership</span><br>
+            <button class="work-link" onclick="openModal('aps')" aria-haspopup="dialog">Read the Case Study →</button>
+          </div>
+        </div>
+        <div class="work-card" id="case-cag">
+          <img src="../images/cag-stage.jpg" alt="Presenter on stage at the Colegio Americano de Guatemala Think Tank">
+          <div class="work-card-body">
+            <div class="work-location">Guatemala City</div>
+            <h3>Colegio Americano de Guatemala</h3>
+            <p>Nearly fifty stakeholders, board members, teachers, parents, and students, gathered for a three-day Future of Learning Think Tank that aligned the community around seven KeySTONE priorities.</p>
+            <span class="work-card-type">International School</span><br>
+            <button class="work-link" onclick="openModal('cag')" aria-haspopup="dialog">Read the Case Study →</button>
+          </div>
+        </div>
+        <div class="work-card" id="case-aaie">
+          <img src="../images/aaie-map.jpg" alt="World map showing 21 countries represented at the AAIE Think Tank">
+          <div class="work-card-body">
+            <div class="work-location">21 Countries · 5 Continents</div>
+            <h3>AAIE Think Tank: Washington, DC</h3>
+            <p>Forty international school leaders convened for a two-day Think Tank that turned friction into forward momentum and sent each participant home with a concrete innovation playbook.</p>
+            <span class="work-card-type">Association Partnership</span><br>
+            <button class="work-link" onclick="openModal('aaie')" aria-haspopup="dialog">Read the Case Study →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Education <span>Accelerated</span></div>
+        <div class="footer-tagline">Factories make widgets. Ecosystems grow people.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="../../updates01/index.html#arc">The Arc</a></li>
+        <li><a href="../../updates01/index.html#frameworks">Frameworks</a></li>
+        <li><a href="../../updates01/index.html#work">Our Work</a></li>
+        <li><a href="../../updates01/index.html#team">Team</a></li>
+        <li><a href="../../updates01/index.html#contact">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Education Accelerated</div>
+    </div>
+  </footer>
+
+  <div id="modal-aps" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-aps-title" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('aps')" aria-label="Close case study">&times;</button>
+      <img src="../images/aps-partnership.jpg" alt="Teachers collaborating at Aurora Public Schools" class="modal-hero-img">
+      <div class="modal-body">
+        <div class="modal-context">Domestic Partnership · Aurora, Colorado</div>
+        <h2 id="modal-aps-title">Building the Destination District</h2>
+        <p class="modal-sub">Aurora Public Schools · Aurora, Colorado</p>
+        <p>Aurora Public Schools serves students from more than 130 countries who speak over 160 languages, one of the most diverse urban school systems in Colorado. When Superintendent Michael Giles arrived with a mandate to make APS a "Destination District," Education Accelerated was engaged to build the educator development infrastructure that vision requires.</p>
+        <h3>The Challenge</h3>
+        <p>A destination district is not declared. It is built. APS needed more than a vision. It needed the structural foundation for system-level leadership alignment, shared commitment, shared language, and the working relationships that turn a bold aspiration into a coordinated reality.</p>
+        <h3>EA's Role</h3>
+        <p>Education Accelerated brought the FUSION Process and Think Tank methodology to APS, convening district leadership around a shared strategic direction, building the collaborative infrastructure that makes alignment stick, and designing the development architecture that carries educators from aspiration through excellence.</p>
+        <div class="modal-pullquote">
+          <p>"This is important work that I personally prioritize. Education Accelerated brought the clarity and structure we needed, a roadmap that makes building a true destination district feel not just visionary, but doable."</p>
+          <cite>Michael Giles, Jr. · Superintendent, Aurora Public Schools</cite>
+        </div>
+        <div class="modal-cta-row">
+          <p>To learn how EA can support your district's educator development strategy:</p>
+          <a href="../../updates01/index.html#contact" class="modal-cta-btn">Talk to Us About Your District</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-cag" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-cag-title" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('cag')" aria-label="Close case study">&times;</button>
+      <img src="../images/cag-stage.jpg" alt="Speaker presenting on stage at the CAG Future of Learning Think Tank" class="modal-hero-img">
+      <div class="modal-gallery">
+        <img src="../images/cag-room.jpg" alt="Nearly fifty stakeholders gathered in the Think Tank main room">
+        <img src="../images/cag-facilitation.jpg" alt="Facilitator guiding a group activity">
+        <img src="../images/cag-discussion.jpg" alt="Small group in focused discussion">
+        <img src="../images/cag-whiteboard.jpg" alt="Ideas mapped on a large whiteboard">
+        <img src="../images/cag-student-mic.jpg" alt="Student speaking into the microphone">
+        <img src="../images/cag-applause.jpg" alt="Room applauding at session conclusion">
+      </div>
+      <div class="modal-body">
+        <div class="modal-context">International Engagement · Guatemala City · October 2025</div>
+        <h2 id="modal-cag-title">From Possibility to Purpose</h2>
+        <p class="modal-sub">Colegio Americano de Guatemala · Future of Learning Think Tank</p>
+        <p>As CAG marked its 80th year, nearly fifty stakeholders, board members, school leaders, teachers, parents, and students, gathered not because something was broken, but because something important was at stake. The question was not "Are we good enough?" It was harder and more honest: <em>Who do we need to become for the next generation of learners?</em></p>
+        <h3>The Process</h3>
+        <p>Education Accelerated's FUSION Process and IDEAL Framework structured three days of work: Day One challenged participants to reimagine learning for 2035. Day Two moved from system critique to human development, redesigning learning around identity, wellbeing, and agency. Day Three turned ideas into architecture, identifying which moves were structural enough to reshape the whole ecosystem.</p>
+        <h3>Seven KeySTONE Priorities</h3>
+        <p>Integrated Facilities & Learning Design; Professional Educator Residency & Mentorship; Time Architecture 2.0; Assessment-to-Evidence System; Pathways to Purpose; Whole Wellbeing & Fulfillment Framework; and Digital Ecosystem Alignment.</p>
+        <div class="modal-pullquote">
+          <p>"Education Accelerated helps us challenge the limits and the boundaries of what is possible at CAG in ways that seem aligned, innovative, and actionable."</p>
+          <cite>Don Francis · General Director, Colegio Americano de Guatemala</cite>
+        </div>
+        <div class="modal-cta-row">
+          <p>To bring a Think Tank to your school community:</p>
+          <a href="../../updates01/index.html#contact" class="modal-cta-btn">Bring a Think Tank to Your School</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-aaie" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-aaie-title" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('aaie')" aria-label="Close case study">&times;</button>
+      <img src="../images/aaie-map.jpg" alt="World map showing 21 countries and 5 continents represented at the AAIE Think Tank" class="modal-hero-img">
+      <div class="modal-body">
+        <div class="modal-context">Association Partnership · Washington, DC · January 2025</div>
+        <h2 id="modal-aaie-title">Igniting Global Leadership</h2>
+        <p class="modal-sub">AAIE Think Tank · 21 Countries · 5 Continents</p>
+        <p>In January 2025, Education Accelerated partnered with the Association for the Advancement of International Education (AAIE) to host a Think Tank at their annual meeting in Washington, DC. Forty international school leaders from 21 countries and five continents convened, not to attend a conference, but to design one together.</p>
+        <p>The central question: <em>How can educational leaders turn moments of opportunity and moments of friction into catalysts for sustainable innovation?</em></p>
+        <h3>The Process: FUSION and ABCQ in Action</h3>
+        <p>EA's FUSION Process structured the experience across three phases: pre-work grounded in real school challenges, a two-day collaborative Think Tank using the ABCQ model (Assets, Barriers, Connections, Questions), and a personalized post-event innovation playbook every leader carried home.</p>
+        <h3>Key Insight: Connectors and Disruptors</h3>
+        <p>Participants arrived believing they were either connectors or disruptors. By the end of day one, they recognized they needed to be both, knowing when to rally a community around shared vision and when to challenge the system to prevent complacency.</p>
+        <div class="modal-pullquote">
+          <p>"We brought together a group of individuals. We left with a network of like-minded, passionate leaders committed to working together as both connectors and disruptors, leading education forward."</p>
+          <cite>Participant · AAIE Think Tank · January 2025</cite>
+        </div>
+        <div class="modal-cta-row">
+          <p>To bring the FUSION Process to your school or association:</p>
+          <a href="../../updates01/index.html#contact" class="modal-cta-btn">Bring a Think Tank to Your Association</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  var lastFocused = null;
+  var FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  function openModal(id) {
+    lastFocused = document.activeElement;
+    var overlay = document.getElementById('modal-' + id);
+    overlay.style.display = 'block';
+    overlay.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+    var closeBtn = overlay.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+    overlay.addEventListener('keydown', trapFocus);
+  }
+
+  function closeModal(id) {
+    var overlay = document.getElementById('modal-' + id);
+    overlay.style.display = 'none';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.removeEventListener('keydown', trapFocus);
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab' && e.key !== 'Escape') return;
+    if (e.key === 'Escape') {
+      var id = this.id.replace('modal-', '');
+      closeModal(id);
+      return;
+    }
+    var focusable = Array.from(this.querySelectorAll(FOCUSABLE));
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+
+  document.querySelectorAll('.modal-overlay').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      if (e.target === el) {
+        var id = el.id.replace('modal-', '');
+        closeModal(id);
+      }
+    });
+  });
+  </script>
+  </main>
+</body>
+</html>
