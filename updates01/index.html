@@ -183,8 +183,9 @@ nav {
 .broken-header p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; }
 .broken-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
 .broken-card { background: #0d1f3a; padding: 36px 28px; }
-.broken-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 20px; }
-.broken-card h3 { color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.02em; }
+.broken-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.broken-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); font-weight: 700; line-height: 0.9; flex-shrink: 0; }
+.broken-card h3 { color: #fff; font-size: 1rem; font-weight: 600; margin: 6px 0 0; letter-spacing: 0.02em; flex: 1; text-align: center; transform: translateX(-8px); }
 .broken-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.7; }
 
 /* MENTOR */
@@ -204,7 +205,7 @@ nav {
 .arc-header .eyebrow { color: var(--teal); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
 .arc-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
 .arc-header p { color: var(--text-light); font-size: 1rem; line-height: 1.8; }
-.arc-diagram { max-width: 1100px; margin: 0 auto 72px; }
+.arc-diagram { max-width: 1320px; margin: 0 auto 72px; }
 .arc-cards-label { text-align: center; margin-bottom: 32px; }
 .arc-cards-label span { display: inline-block; color: var(--text-light); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; border-top: 1px solid #ddd; padding-top: 12px; }
 
@@ -358,15 +359,62 @@ nav {
 .cta-inner .eyebrow { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin-bottom: 24px; display: block; }
 .cta-inner h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); color: #fff; line-height: 1.15; margin-bottom: 20px; font-weight: 900; }
 .cta-inner p { color: rgba(255,255,255,0.55); font-size: 1.05rem; line-height: 1.8; margin-bottom: 48px; }
-.cta-form { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
-.cta-form input, .cta-form textarea, .cta-form select {
+.cta-form { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.form-section-label {
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0 0 14px;
+  display: block;
+}
+.form-section {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-interest-block { margin-top: 24px; padding-top: 0; }
+.contact-message-block { margin-top: 24px; }
+.cta-form input, .cta-form textarea {
   width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
   color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s;
 }
 .cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(255,255,255,0.3); }
-.cta-form input:focus, .cta-form textarea:focus, .cta-form select:focus { border-color: var(--gold); }
-.cta-form select { color: rgba(255,255,255,0.5); appearance: none; cursor: pointer; }
-.cta-form select option { background: var(--navy); color: #fff; }
+.cta-form input:focus, .cta-form textarea:focus { border-color: var(--gold); }
+.contact-interest-group { display: grid; grid-template-columns: 1fr; gap: 10px; text-align: left; }
+.contact-interest-option { position: relative; }
+.contact-interest-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.contact-interest-card {
+  display: block;
+  min-height: 100%;
+  padding: 15px 18px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.78);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s;
+}
+.contact-interest-card:hover {
+  border-color: rgba(201,146,26,0.45);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.contact-interest-option input:checked + .contact-interest-card {
+  border-color: var(--gold);
+  background: rgba(201,146,26,0.16);
+  color: #fff;
+}
+.contact-interest-option input:focus-visible + .contact-interest-card {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201,146,26,0.2);
+}
 .cta-form textarea { height: 110px; resize: vertical; }
 .cta-form button { padding: 16px; background: var(--gold); color: #fff; border: none; cursor: pointer; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; transition: background 0.2s; font-family: 'Inter', sans-serif; }
 .cta-form button:hover { background: var(--gold-light); color: var(--navy-deep); }
@@ -435,6 +483,7 @@ footer { background: #050c17; padding: 56px; }
   .footer-links { justify-content: center; flex-wrap: wrap; }
   .mentor-stats { gap: 28px; }
   .modal-body { padding: 32px 24px 40px; }
+  .cta-form { max-width: 100%; }
 }
 </style>
 </head>
@@ -559,18 +608,24 @@ footer { background: #050c17; padding: 56px; }
     </div>
     <div class="broken-grid">
       <div class="broken-card">
-        <div class="broken-num">01</div>
-        <h3>No Pipeline</h3>
+        <div class="broken-card-head">
+          <div class="broken-num">1.</div>
+          <h3>No Pipeline</h3>
+        </div>
         <p>Schools wait for certified teachers instead of growing their own. The heroes are out there, in high schools, in communities, and the system ignores them. Every unfilled classroom is a learner without a guide.</p>
       </div>
       <div class="broken-card">
-        <div class="broken-num">02</div>
-        <h3>Sink or Swim Induction</h3>
+        <div class="broken-card-head">
+          <div class="broken-num">2.</div>
+          <h3>Sink or Swim Induction</h3>
+        </div>
         <p>New educators are handed a classroom and left to figure it out. The most formative years of a teaching career are also the most unsupported, and students in those classrooms absorb every cost of that isolation.</p>
       </div>
       <div class="broken-card">
-        <div class="broken-num">03</div>
-        <h3>No Path Forward</h3>
+        <div class="broken-card-head">
+          <div class="broken-num">3.</div>
+          <h3>No Path Forward</h3>
+        </div>
         <p>Veterans plateau. There is no structural investment in the educator who has been teaching for fifteen years and still has fifteen more to give. When great teachers stop growing, their students stop getting the best of them.</p>
       </div>
     </div>
@@ -624,50 +679,50 @@ footer { background: #050c17; padding: 56px; }
         <text x="50" y="214" font-family="Georgia,serif" font-size="12.5" fill="#F8F5F0" opacity="0.9">College student</text>
         <circle cx="36" cy="298" r="5" fill="#0D7C8F"/>
         <text x="50" y="302" font-family="Georgia,serif" font-size="12.5" fill="#F8F5F0" opacity="0.9">Career changer</text>
-        <path d="M 155 118 L 190 155" fill="none" stroke="#0D7C8F" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
-        <rect x="192" y="143" width="100" height="38" rx="4" fill="#071e2e" stroke="#0D7C8F" stroke-width="1.6"/>
-        <text x="242" y="160" font-family="Georgia,serif" font-size="13" fill="#0D7C8F" text-anchor="middle" font-weight="bold">Apprentice</text>
-        <text x="242" y="175" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" text-anchor="middle" opacity="0.85">4,500+ hours</text>
-        <path d="M 292 163 L 328 193" fill="none" stroke="#0D7C8F" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
-        <path d="M 152 210 L 192 218" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
-        <rect x="192" y="205" width="100" height="38" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="242" y="222" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Resident</text>
-        <text x="242" y="237" font-family="Georgia,serif" font-size="11" fill="#2a9d6e" text-anchor="middle" opacity="0.85">1,200-2,000 hours</text>
-        <path d="M 292 225 L 328 218" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
-        <path d="M 152 298 Q 238 298 328 230" fill="none" stroke="#0D7C8F" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.8"/>
-        <text x="224" y="292" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" opacity="0.85" text-anchor="middle">university degree</text>
-        <circle cx="350" cy="210" r="36" fill="#0F2240" stroke="#F8F5F0" stroke-width="2.5"/>
-        <circle cx="350" cy="210" r="11" fill="#F8F5F0" opacity="0.1"/>
-        <circle cx="350" cy="210" r="6" fill="#F8F5F0"/>
-        <text x="350" y="257" font-family="Georgia,serif" font-size="13.5" fill="#F8F5F0" text-anchor="middle" font-weight="bold">The Classroom</text>
-        <path d="M 386 210 L 416 210" fill="none" stroke="#2a9d6e" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
-        <rect x="410" y="188" width="86" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="453" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">New</text>
-        <text x="453" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
-        <path d="M 496 210 L 510 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
-        <rect x="512" y="188" width="78" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="551" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Developing</text>
-        <text x="551" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
-        <path d="M 590 210 L 608 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" marker-end="url(#jarr)" opacity="0.9"/>
-        <rect x="606" y="188" width="102" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
-        <text x="657" y="207" font-family="Georgia,serif" font-size="12" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Accomplished</text>
-        <text x="657" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
-        <path d="M 708 210 L 716 210" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <path d="M 162 118 L 172 118" fill="none" stroke="#0D7C8F" stroke-width="2" opacity="0.9"/>
+        <rect x="172" y="99" width="112" height="42" rx="4" fill="#071e2e" stroke="#0D7C8F" stroke-width="1.6"/>
+        <text x="228" y="117" font-family="Georgia,serif" font-size="13" fill="#0D7C8F" text-anchor="middle" font-weight="bold">Apprentice</text>
+        <text x="228" y="133" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" text-anchor="middle" opacity="0.85">4,500+ hours</text>
+        <path d="M 284 120 Q 312 146 332 178" fill="none" stroke="#0D7C8F" stroke-width="2" opacity="0.9"/>
+        <path d="M 136 210 L 172 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
+        <rect x="168" y="189" width="128" height="42" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="232" y="206" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Resident</text>
+        <text x="232" y="222" font-family="Georgia,serif" font-size="10.5" fill="#2a9d6e" text-anchor="middle" opacity="0.85">1,200-2,000 hours</text>
+        <path d="M 296 210 L 312 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
+        <path d="M 136 298 Q 232 306 332 244" fill="none" stroke="#0D7C8F" stroke-width="1.8" opacity="0.8"/>
+        <text x="286" y="296" font-family="Georgia,serif" font-size="11" fill="#0D7C8F" opacity="0.92" text-anchor="middle">University Degree</text>
+        <text x="350" y="262" font-family="Georgia,serif" font-size="13.5" fill="#F8F5F0" text-anchor="middle" font-weight="bold">The Classroom</text>
+        <path d="M 386 210 L 402 210" fill="none" stroke="#2a9d6e" stroke-width="2" opacity="0.9"/>
+        <rect x="402" y="188" width="84" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="444" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">New</text>
+        <text x="444" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
+        <path d="M 486 210 L 502 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
+        <rect x="502" y="188" width="96" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="550" y="207" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Developing</text>
+        <text x="550" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
+        <path d="M 598 210 L 614 210" fill="none" stroke="#2a9d6e" stroke-width="1.8" opacity="0.9"/>
+        <rect x="610" y="188" width="100" height="44" rx="4" fill="#061a10" stroke="#2a9d6e" stroke-width="1.6"/>
+        <text x="660" y="207" font-family="Georgia,serif" font-size="12" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Accomplished</text>
+        <text x="660" y="223" font-family="Georgia,serif" font-size="13" fill="#2a9d6e" text-anchor="middle" font-weight="bold">Teacher</text>
+        <path d="M 710 210 L 718 210" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
         <circle cx="740" cy="210" r="22" fill="#0F2240" stroke="#C9921A" stroke-width="2.5"/>
         <circle cx="740" cy="210" r="7" fill="#C9921A" opacity="1"/>
         <text x="740" y="247" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Mentor Teacher</text>
-        <path d="M 758 192 Q 808 138 854 122" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <path d="M 756 192 Q 806 138 846 122" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
         <rect x="846" y="99" width="92" height="46" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
         <text x="892" y="118" font-family="Georgia,serif" font-size="12.5" fill="#C9921A" text-anchor="middle" font-weight="bold">Domain &amp;</text>
         <text x="892" y="134" font-family="Georgia,serif" font-size="12.5" fill="#C9921A" text-anchor="middle" font-weight="bold">Pedagogy</text>
-        <path d="M 762 210 L 854 210" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <path d="M 762 210 L 848 210" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
         <rect x="848" y="188" width="88" height="44" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
         <text x="892" y="208" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Building</text>
         <text x="892" y="223" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Leader</text>
-        <path d="M 758 228 Q 808 282 854 296" fill="none" stroke="#C9921A" stroke-width="2" marker-end="url(#jarr)" opacity="0.9"/>
+        <path d="M 756 228 Q 806 282 852 296" fill="none" stroke="#C9921A" stroke-width="2" opacity="0.9"/>
         <rect x="852" y="274" width="80" height="44" rx="4" fill="#150e00" stroke="#C9921A" stroke-width="1.6"/>
         <text x="892" y="294" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">System</text>
         <text x="892" y="309" font-family="Georgia,serif" font-size="13" fill="#C9921A" text-anchor="middle" font-weight="bold">Leader</text>
+        <circle cx="350" cy="210" r="36" fill="#0F2240" stroke="#F8F5F0" stroke-width="2.5"/>
+        <circle cx="350" cy="210" r="11" fill="#F8F5F0" opacity="0.1"/>
+        <circle cx="350" cy="210" r="6" fill="#F8F5F0"/>
         <text x="480" y="378" font-family="Georgia,serif" font-size="12" fill="#F8F5F0" opacity="0.55" text-anchor="middle" font-style="italic">Every educator. Every stage. One arc.</text>
       </svg>
     </div>
@@ -837,7 +892,7 @@ footer { background: #050c17; padding: 56px; }
           <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:4px;">Educator Ecosystems</div>
           <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">Design Principles and Global Strategies for Human-Centered Talent Development &nbsp;&middot;&nbsp; Education Accelerated, March 2026</div>
         </div>
-        <a href="../assets/documents/educator-ecosystems.html" style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View Whitepaper &rarr;</a>
+        <a href="../assets/documents/educator-ecosystems.html" target="_blank" rel="noopener" style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View Whitepaper &rarr;</a>
       </div>
       <div style="padding:28px 32px; background:#fff; border-left:4px solid var(--teal); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
         <div>
@@ -845,7 +900,7 @@ footer { background: #050c17; padding: 56px; }
           <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:4px;">Rethinking Educational Progress</div>
           <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">A New Paradigm for Local and Global Impact &nbsp;&middot;&nbsp; Graded, The American School of Sao Paulo &nbsp;&middot;&nbsp; 2025</div>
         </div>
-        <a href="../assets/documents/graded-thinktank-case-study.html" style="display:inline-block; padding:14px 28px; background:var(--teal); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View Case Study &rarr;</a>
+        <a href="../assets/documents/graded-thinktank-case-study.html" target="_blank" rel="noopener" style="display:inline-block; padding:14px 28px; background:var(--teal); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View Case Study &rarr;</a>
       </div>
       <div style="padding:28px 32px; background:var(--cream); border-left:4px solid var(--navy); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
         <div>
@@ -853,7 +908,7 @@ footer { background: #050c17; padding: 56px; }
           <div style="font-family:'Playfair Display',serif; color:var(--navy); font-size:1.05rem; font-weight:700; margin-bottom:4px;">The Complete 13 Pillars</div>
           <div style="color:var(--text-light); font-size:0.85rem; line-height:1.5;">From Factory to Ecosystem: A Championship Playbook for Educational Excellence &nbsp;&middot;&nbsp; David B. Palumbo</div>
         </div>
-        <a href="../assets/documents/factory-to-ecosystem-playbook.html" style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View the Playbook &rarr;</a>
+        <a href="../assets/documents/factory-to-ecosystem-playbook.html" target="_blank" rel="noopener" style="display:inline-block; padding:14px 28px; background:var(--navy); color:#fff; text-decoration:none; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; white-space:nowrap; flex-shrink:0;">View the Playbook &rarr;</a>
       </div>
     </div>
 
@@ -877,7 +932,7 @@ footer { background: #050c17; padding: 56px; }
         <div class="work-card-body">
           <div class="work-location">Aurora, Colorado</div>
           <h3>Aurora Public Schools</h3>
-          <p>EA brought the FUSION Process and Think Tank methodology to APS, convening district leadership around a shared strategic direction and building the educator development infrastructure that makes personalized learning pathways possible at scale for every student Superintendent Giles' Destination District serves.</p>
+          <p>Destination District work, leadership alignment, and educator development architecture in one of Colorado’s most diverse urban school systems.</p>
           <span class="work-card-type">U.S. District Partnership</span><br>
           <button class="work-link" onclick="openModal('aps')" aria-haspopup="dialog">Read the Case Study &rarr;</button>
         </div>
@@ -887,7 +942,7 @@ footer { background: #050c17; padding: 56px; }
         <div class="work-card-body">
           <div class="work-location">Guatemala City</div>
           <h3>Colegio Americano de Guatemala</h3>
-          <p>Nearly fifty stakeholders, board members, teachers, parents, and students, gathered for a 3-day Future of Learning Think Tank. Seven KeySTONE priorities. One unified direction for the next 80 years.</p>
+          <p>A three-day Future of Learning Think Tank that helped nearly fifty stakeholders align around seven KeySTONE priorities.</p>
           <span class="work-card-type">International School</span><br>
           <button class="work-link" onclick="openModal('cag')" aria-haspopup="dialog">Read the Case Study &rarr;</button>
         </div>
@@ -897,11 +952,18 @@ footer { background: #050c17; padding: 56px; }
         <div class="work-card-body">
           <div class="work-location">21 Countries &middot; 5 Continents</div>
           <h3>AAIE Think Tank: Washington, DC</h3>
-          <p>Forty international school leaders. Twenty-one countries. Five continents. EA designed and facilitated a two-day Think Tank that turned friction into forward momentum, sending every leader home with a concrete innovation playbook.</p>
+          <p>A global leadership Think Tank that brought together forty international school leaders and sent each home with a concrete innovation playbook.</p>
           <span class="work-card-type">Association Partnership</span><br>
           <button class="work-link" onclick="openModal('aaie')" aria-haspopup="dialog">Read the Case Study &rarr;</button>
         </div>
       </div>
+    </div>
+    <div style="margin-top:28px; padding:28px 32px; background:#132642; border-left:4px solid var(--gold); display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div>
+        <div style="color:var(--gold); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:8px;">Library</div>
+        <div style="font-family:'Playfair Display',serif; color:#fff; font-size:1.25rem; line-height:1.4;">Case studies, whitepapers, and playbooks.</div>
+      </div>
+      <a href="../assets/documents/resources.html" style="display:inline-block; padding:14px 28px; background:var(--gold); color:#fff; text-decoration:none; font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; white-space:nowrap;">View Full Resource Library</a>
     </div>
   </div>
 </section>
@@ -970,7 +1032,7 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-zoltan.jpg" alt="Dr. Zoltan Sarda" class="team-photo" style="object-position: 70% center;">
+        <img src="../assets/images/team-zoltan.jpg" alt="Dr. Zoltan Sarda" class="team-photo" style="object-position: right center;">
         <div class="team-info">
           <div class="team-name">Dr. Zoltan Sarda</div>
           <div class="team-title">Managing Partner, Learning Experience Design</div>
@@ -999,7 +1061,7 @@ footer { background: #050c17; padding: 56px; }
         </div>
       </div>
       <div class="team-card">
-        <img src="../assets/images/team-fred.jpg" alt="Fred Greene, III" class="team-photo" style="object-position: center top;">
+        <img src="../assets/images/team-fred.jpg" alt="Fred Greene, III" class="team-photo" style="object-position: 32% center;">
         <div class="team-info">
           <div class="team-name">Fred Greene, III</div>
           <div class="team-title">Operating Partner, Learning Environments</div>
@@ -1037,25 +1099,53 @@ footer { background: #050c17; padding: 56px; }
     <h2>Your educators are ready.<br>Your learners are waiting.</h2>
     <p>We know what thriving educators look like, and we know what they make possible for every student in front of them. EA works with a small number of partners at any given time. That's by design. Tell us what's at the top of your list and we'll take it from there.</p>
     <form class="cta-form" action="https://formspree.io/f/xdawdabo" method="POST" aria-label="Contact Education Accelerated">
-      <label for="contact-name" class="visually-hidden">Your name</label>
-      <input id="contact-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
-      <label for="contact-email" class="visually-hidden">Your email</label>
-      <input id="contact-email" type="email" name="email" placeholder="Your email" required autocomplete="email">
-      <label for="contact-org" class="visually-hidden">School or organization</label>
-      <input id="contact-org" type="text" name="organization" placeholder="School or organization" autocomplete="organization">
-      <label for="contact-interest" class="visually-hidden">What's at the top of your list?</label>
-      <select id="contact-interest" name="interest" aria-label="What's at the top of your list?">
-        <option value="" disabled selected>What's at the top of your list?</option>
-        <option>Teacher pipeline: Grow Your Own</option>
-        <option>Residency models &amp; collaborative teaching teams</option>
-        <option>Mentor depth &amp; capacity for early-stage educators</option>
-        <option>Purpose-driven and deeper learning transformation</option>
-        <option>Leadership &amp; district-level ecosystem transformation</option>
-        <option>Stakeholder visioning &amp; strategic alignment</option>
-        <option>Something else: let's talk</option>
-      </select>
-      <label for="contact-message" class="visually-hidden">Tell us where you're trying to go</label>
-      <textarea id="contact-message" name="message" placeholder="Tell us where you're trying to go."></textarea>
+      <fieldset class="form-section">
+        <legend class="form-section-label">Contact</legend>
+        <label for="contact-name" class="visually-hidden">Your name</label>
+        <input id="contact-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
+        <label for="contact-email" class="visually-hidden">Your email</label>
+        <input id="contact-email" type="email" name="email" placeholder="Your email" required autocomplete="email">
+        <label for="contact-org" class="visually-hidden">School or organization</label>
+        <input id="contact-org" type="text" name="organization" placeholder="School or organization" autocomplete="organization">
+      </fieldset>
+      <fieldset class="form-section contact-interest-block">
+        <legend class="form-section-label">What's at the top of your list?</legend>
+        <div class="contact-interest-group">
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Teacher Pipeline: Grow Your Own">
+            <span class="contact-interest-card">Teacher Pipeline: Grow Your Own</span>
+          </label>
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Residency Models & Collaborative Teaching Teams">
+            <span class="contact-interest-card">Residency Models &amp; Collaborative Teaching Teams</span>
+          </label>
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Mentor Depth & Capacity for Early-Stage Educators">
+            <span class="contact-interest-card">Mentor Depth &amp; Capacity for Early-Stage Educators</span>
+          </label>
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Purpose-Driven and Deeper Learning Transformation">
+            <span class="contact-interest-card">Purpose-Driven and Deeper Learning Transformation</span>
+          </label>
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Leadership & District-Level Ecosystem Transformation">
+            <span class="contact-interest-card">Leadership &amp; District-Level Ecosystem Transformation</span>
+          </label>
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Stakeholder Visioning & Strategic Alignment">
+            <span class="contact-interest-card">Stakeholder Visioning &amp; Strategic Alignment</span>
+          </label>
+          <label class="contact-interest-option">
+            <input type="checkbox" name="interest[]" value="Something Else: Let's Talk">
+            <span class="contact-interest-card">Something Else: Let's Talk</span>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="form-section contact-message-block">
+        <legend class="form-section-label">Tell Us Where You're Trying to Go</legend>
+        <label for="contact-message" class="visually-hidden">Tell us where you're trying to go</label>
+        <textarea id="contact-message" name="message" placeholder="Share a little context..."></textarea>
+      </fieldset>
       <button type="submit">Start the Conversation</button>
     </form>
     <p class="cta-note">We work with a small number of partners. We'll respond within one business day.</p>
@@ -1104,7 +1194,7 @@ footer { background: #050c17; padding: 56px; }
       </div>
       <div class="modal-cta-row">
         <p>To learn how EA can support your district's educator development strategy:</p>
-        <a href="/cdn-cgi/l/email-protection#dbbfbaadb2bf9bbebfaeb8baafb2b4b5bab8b8beb7bea9baafbebff5b8b4b6" class="modal-cta-btn">Talk to Us About Your District</a>
+        <a href="#contact" class="modal-cta-btn" onclick="closeModal('aps')">Talk to Us About Your District</a>
         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee;">
           <button onclick="closeModal('aps')" style="background:none; border:none; cursor:pointer; color:var(--teal); font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; padding:0; font-family:'Inter',sans-serif;">&larr; Back to Our Work</button>
         </div>
@@ -1153,7 +1243,7 @@ footer { background: #050c17; padding: 56px; }
       </div>
       <div class="modal-cta-row">
         <p>To bring a Think Tank to your school community:</p>
-        <a href="/cdn-cgi/l/email-protection#a7c3c6d1cec3e7c2c3d2c4c6d3cec8c9c6c4c4c2cbc2d5c6d3c2c389c4c8ca" class="modal-cta-btn">Bring a Think Tank to Your School</a>
+        <a href="#contact" class="modal-cta-btn" onclick="closeModal('cag')">Bring a Think Tank to Your School</a>
         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee;">
           <button onclick="closeModal('cag')" style="background:none; border:none; cursor:pointer; color:var(--teal); font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; padding:0; font-family:'Inter',sans-serif;">&larr; Back to Our Work</button>
         </div>
@@ -1183,7 +1273,7 @@ footer { background: #050c17; padding: 56px; }
       </div>
       <div class="modal-cta-row">
         <p>To bring the FUSION Process to your school or association:</p>
-        <a href="/cdn-cgi/l/email-protection#046065726d60446160716765706d6b6a65676761686176657061602a676b69" class="modal-cta-btn">Bring a Think Tank to Your Association</a>
+        <a href="#contact" class="modal-cta-btn" onclick="closeModal('aaie')">Bring a Think Tank to Your Association</a>
         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee;">
           <button onclick="closeModal('aaie')" style="background:none; border:none; cursor:pointer; color:var(--teal); font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; padding:0; font-family:'Inter',sans-serif;">&larr; Back to Our Work</button>
         </div>
